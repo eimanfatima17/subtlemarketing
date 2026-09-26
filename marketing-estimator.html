@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://YOUR-DOMAIN.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://YOUR-DOMAIN.com/marketing-estimator.html">
+<meta property="og:url" content="https://YOUR-DOMAIN.com/marketing-estimator">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Marketing Estimator | Mubashir Ahmed — Leads &amp; Students Calculator">
 <meta name="twitter:description" content="Enter your advertising budget and target market to see estimated leads, messages, and potential student confirmations for your Quran academy.">
@@ -31,8 +31,8 @@ body{color:var(--tx);line-height:1.62;overflow-x:hidden;-webkit-font-smoothing:a
 a{color:inherit;text-decoration:none}img{max-width:100%;display:block}svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .w{max-width:1420px;margin:0 auto;padding:0 24px}
 :focus-visible{outline:2px solid #0b0b14;outline-offset:3px}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:var(--r-pill);font-weight:700;font-size:16px;background:var(--g);color:#fff;border:1px solid transparent;cursor:pointer;transition:.2s}
-.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.btn.gh{background:rgba(255,255,255,.85);color:var(--tx);border-color:var(--line)}.btn.wh{background:#fff;color:#0b0b14}.btn.dk{background:#0b0b14}.btn.sm{padding:12px 22px;font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;border-radius:var(--r-pill);font-weight:700;font-size:16px;background:var(--g);color:#fff;border:1px solid transparent;cursor:pointer;transition:.2s}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.btn.gh{background:rgba(255,255,255,.85);color:var(--tx);border-color:var(--line)}.btn.wh{background:#fff;color:#0b0b14}.btn.dk{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.4);color:#fff}.btn.dk:hover{background:#d12cbf;border-color:transparent;filter:none}.btn.sm{padding:12px 22px;font-size:15px}
 .mbtn{display:none}
 .ey{font-size:13px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--ey);margin-bottom:20px}
 h1,h2,h3{letter-spacing:-.035em;line-height:1.06;font-weight:800}h2{font-size:clamp(28px,4vw,46px)}
@@ -69,7 +69,8 @@ input[type=range]{width:100%;accent-color:#d12cbf;margin-top:14px}
 .resmeta b{color:var(--tx)}
 .rg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:26px}
 .rc{padding:28px}.rc .lab{display:flex;align-items:center;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:.15em;color:var(--mu);font-weight:700}.rc .lab svg{width:16px;height:16px;color:#d12cbf}
-.rc .num{font-size:37px;font-weight:800;margin:12px 0 6px;letter-spacing:-.02em;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rc .num{font-size:37px;font-weight:800;margin:12px 0 6px;letter-spacing:-.02em;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent;overflow-wrap:anywhere;word-break:break-word;line-height:1.15}
+#rCps{font-size:24px;line-height:1.3}
 .rc p{color:var(--mu);font-size:13.5px}
 .afg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
 .afg .a{padding:16px 18px;border-radius:var(--r-sm);background:var(--card);border:1px solid var(--line);font-size:14.5px;font-weight:600}
@@ -102,27 +103,28 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
 .top:hover{background:#fff}
 @media(max-width:1000px){.row2,.toggle2{grid-template-columns:1fr}.rg{grid-template-columns:1fr 1fr}.afg{grid-template-columns:1fr 1fr}.hw{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1fr}}
 @media(max-width:640px){.sec{padding:70px 0}.rg,.afg,.hw{grid-template-columns:1fr}.audit{padding:40px 24px}.budget-row{flex-direction:column}.budget-row select{max-width:100%!important}}
-@media(max-width:520px){.hide-xs{display:none}}
+@media(max-width:680px){.hide-xs{display:none}.audit .ct{flex-direction:column;align-items:stretch}.audit .ct .btn{text-align:center}}
 @media(max-width:640px){footer{padding-bottom:110px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none!important}.card:hover{transform:none}}
+@media(hover:none){.btn:hover,a.card:hover{transform:none!important}}
 </style>
 </head>
 <body>
 
 <div class="nav" id="nav">
-  <a class="brand" href="index.html"><img class="logo-mark" src="assets/logo-icon.png" alt="Mubashir Ahmed"><span class="brand-text"><strong>MUBASHIR</strong><small>AHMED</small></span></a>
+  <a class="brand" href="/"><img class="logo-mark" src="assets/logo-icon.png" alt="Mubashir Ahmed"><span class="brand-text"><strong>MUBASHIR</strong><small>AHMED</small></span></a>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="index.html#results">Case Studies</a>
-    <a href="index.html#services">Services</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#testimonials">Testimonials</a>
-    <a class="btn gh sm mbtn" href="marketing-estimator.html">Marketing Estimator</a>
-    <a class="btn sm mbtn" href="free-audit.html">Free Audit</a>
+    <a href="/">Home</a>
+    <a href="/#results">Case Studies</a>
+    <a href="/#services">Services</a>
+    <a href="/#about">About</a>
+    <a href="/#testimonials">Testimonials</a>
+    <a class="btn gh sm mbtn" href="/marketing-estimator">Marketing Estimator</a>
+    <a class="btn sm mbtn" href="/free-audit">Free Audit</a>
   </nav>
   <div class="ct">
-    <a class="btn gh sm on" href="marketing-estimator.html">Marketing Estimator</a>
-    <a class="btn sm" href="free-audit.html">Free Audit</a>
+    <a class="btn gh sm on" href="/marketing-estimator">Marketing Estimator</a>
+    <a class="btn sm" href="/free-audit">Free Audit</a>
     <button class="bg" id="bg" aria-label="Menu">☰</button>
   </div>
 </div>
@@ -243,7 +245,7 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
     <div class="rg">
       <div class="card rc"><div class="lab"><svg class="i" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/></svg> <span id="rLabel">Estimated leads</span></div><div class="num" id="rLeads">25–36</div><p id="rCpl">Estimated cost per lead: Rs2,500–Rs3,500</p></div>
       <div class="card rc"><div class="lab"><svg class="i" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Estimated confirmed students</div><div class="num" id="rStudents">5–8</div><p>Based on typical campaign benchmarks for this market.</p></div>
-      <div class="card rc"><div class="lab"><svg class="i" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/></svg> Estimated cost per student</div><div class="num" id="rCps">Rs11,250–Rs18,000</div><p>Total budget divided by the estimated student range.</p></div>
+      <div class="card rc"><div class="lab"><svg class="i" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/></svg> Estimated cost per student</div><div class="num" id="rCps">Rs11,250<br>– Rs18,000</div><p>Total budget divided by the estimated student range.</p></div>
       <div class="card rc"><div class="lab"><svg class="i" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg> With continuous advertising</div><div class="num" id="rCont">6–10</div><p>Estimated next-month confirmations if you keep running ads consistently.</p></div>
     </div>
     <div class="card" style="margin-top:20px">
@@ -319,8 +321,8 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
       <p style="font-weight:700;font-size:19px;margin:14px 0 0;color:#fff;max-width:none">Ready to Grow Your Quran Academy?</p>
       <p>Get a customized marketing strategy for your Quran Academy — Facebook Ads, Google Ads, lead generation, funnels &amp; landing pages, and student acquisition.</p>
       <div class="ct">
-        <a class="btn wh" href="https://wa.me/923239001373?text=Assalamualaikum%2C%20I%20want%20a%20marketing%20strategy%20for%20my%20Quran%20academy" target="_blank" rel="noreferrer"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> Talk to Mubashir Ahmed (+923239001373)</a>
-        <a class="btn wh" href="https://wa.me/923473803012?text=Assalamualaikum%2C%20I%20want%20a%20marketing%20strategy%20for%20my%20Quran%20academy" target="_blank" rel="noreferrer"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> Talk to Mubashir Ahmed (+923473803012)</a>
+        <a class="btn wh" href="https://wa.me/923239001373?text=Assalamualaikum%2C%20I%20want%20a%20marketing%20strategy%20for%20my%20Quran%20academy" target="_blank" rel="noreferrer"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> Talk to Mubashir Ahmed <span class="hide-xs">(+923239001373)</span></a>
+        <a class="btn wh" href="https://wa.me/923473803012?text=Assalamualaikum%2C%20I%20want%20a%20marketing%20strategy%20for%20my%20Quran%20academy" target="_blank" rel="noreferrer"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> Talk to Mubashir Ahmed <span class="hide-xs">(+923473803012)</span></a>
       </div>
       <p style="margin-top:18px;font-size:13px;color:rgba(255,255,255,.6)">Marketing Strategy by Mubashir Ahmed</p>
     </div>
@@ -332,16 +334,16 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
     <footer>
       <div class="fg">
         <div>
-          <a class="brand" href="index.html"><img class="logo-mark" src="assets/logo-icon.png" alt="Mubashir Ahmed" loading="lazy" decoding="async"><span class="brand-text"><strong>MUBASHIR</strong><small>AHMED</small></span></a>
+          <a class="brand" href="/"><img class="logo-mark" src="assets/logo-icon.png" alt="Mubashir Ahmed" loading="lazy" decoding="async"><span class="brand-text"><strong>MUBASHIR</strong><small>AHMED</small></span></a>
           <p>Growth Strategist for Quran Academies, Mosques &amp; Islamic Organizations. Building data-driven systems rooted in Deen.</p>
           <div class="ct">
-            <a class="btn gh sm" href="marketing-estimator.html">Marketing Estimator</a>
+            <a class="btn gh sm" href="/marketing-estimator">Marketing Estimator</a>
             <a class="btn sm" href="https://wa.me/923239001373?text=Assalamualaikum%2C%20I%20want%20a%20free%20growth%20audit%20for%20my%20business" target="_blank" rel="noreferrer">Start on WhatsApp →</a>
           </div>
         </div>
         <div>
-          <h4>Pages</h4>
-          <ul><li><a href="index.html">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html">Courses</a></li><li><a href="index.html">Blog</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="free-audit.html">Free Audit</a></li><li><a href="marketing-estimator.html">Marketing Estimator</a></li><li><a href="index.html">All Topics</a></li></ul>
+          <h4>Quick Links</h4>
+          <ul><li><a href="/">Home</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/#services">Services</a></li><li><a href="/#about">About</a></li><li><a href="/#testimonials">Testimonials</a></li><li><a href="/free-audit">Free Audit</a></li><li><a href="/marketing-estimator">Marketing Estimator</a></li></ul>
         </div>
         <div>
           <h4>Connect</h4>
@@ -454,7 +456,7 @@ function render(){
   document.getElementById('rLeads').textContent=leadsLow+'–'+leadsHigh;
   document.getElementById('rCpl').textContent='Estimated cost per '+unit+': '+curFmt(cplLow)+'–'+curFmt(cplHigh);
   document.getElementById('rStudents').textContent=studLow+'–'+studHigh;
-  document.getElementById('rCps').textContent=curFmt(cpsLow)+'–'+curFmt(cpsHigh);
+  document.getElementById('rCps').innerHTML=curFmt(cpsLow)+'<br>– '+curFmt(cpsHigh);
   document.getElementById('rCont').textContent=contLow+'–'+contHigh;
   document.getElementById('rMonths').textContent='Month 1: '+studLow+'–'+studHigh+' students · Month 2+: '+contLow+'–'+contHigh+' students';
   document.getElementById('adTypeHint').textContent=ad.hint;
