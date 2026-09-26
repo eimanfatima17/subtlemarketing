@@ -205,6 +205,8 @@ const toTop=document.getElementById('toTop');
 window.addEventListener('scroll',()=>toTop.classList.toggle('show',window.scrollY>400));
 toTop.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});
 bg.addEventListener('click',()=>{nav.classList.toggle('o');bg.textContent=nav.classList.contains('o')?'✕':'☰';});
+window.addEventListener('scroll',()=>{if(nav.classList.contains('o')){nav.classList.remove('o');bg.textContent='☰';}});
+document.querySelectorAll('.nav nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('o');bg.textContent='☰';}));
 
 document.getElementById('auditForm').addEventListener('submit',function(e){
   e.preventDefault();

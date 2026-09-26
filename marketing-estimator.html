@@ -103,7 +103,7 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
 .top:hover{background:#fff}
 @media(max-width:1000px){.row2,.toggle2{grid-template-columns:1fr}.rg{grid-template-columns:1fr 1fr}.afg{grid-template-columns:1fr 1fr}.hw{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1fr}}
 @media(max-width:640px){.sec{padding:70px 0}.rg,.afg,.hw{grid-template-columns:1fr}.audit{padding:40px 24px}.budget-row{flex-direction:column}.budget-row select{max-width:100%!important}}
-@media(max-width:680px){.hide-xs{display:none}.audit .ct{flex-direction:column;align-items:stretch}.audit .ct .btn{text-align:center}}
+@media(max-width:680px){.audit .ct{flex-direction:column;align-items:stretch;gap:12px}.audit .ct .btn{text-align:center;flex-wrap:wrap;padding:13px 22px;font-size:14.5px;row-gap:3px}.audit .ct .btn .hide-xs{display:block;flex-basis:100%;font-size:12.5px;font-weight:600;opacity:.75;margin-top:1px}}
 @media(max-width:640px){footer{padding-bottom:110px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none!important}.card:hover{transform:none}}
 @media(hover:none){.btn:hover,a.card:hover{transform:none!important}}
@@ -374,6 +374,8 @@ const toTop=document.getElementById('toTop');
 window.addEventListener('scroll',()=>toTop.classList.toggle('show',window.scrollY>400));
 toTop.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});
 bg.addEventListener('click',()=>{nav.classList.toggle('o');bg.textContent=nav.classList.contains('o')?'✕':'☰';});
+window.addEventListener('scroll',()=>{if(nav.classList.contains('o')){nav.classList.remove('o');bg.textContent='☰';}});
+document.querySelectorAll('.nav nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('o');bg.textContent='☰';}));
 
 // ---- Estimator logic ----
 const COUNTRIES={
