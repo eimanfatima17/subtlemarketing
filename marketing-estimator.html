@@ -88,7 +88,7 @@ input[type=range]{width:100%;accent-color:#d12cbf;margin-top:14px}
 .fc{text-align:center;padding:120px 0}.fc h2{font-size:clamp(32px,5.2vw,60px);max-width:860px;margin:0 auto 20px}.fc p{color:#a9a9b6;font-size:17px;max-width:580px;margin:0 auto 32px}
 .dk{background:#0b0b0f;color:#fff}.dk .mu{color:#a9a9b6}.dk .ey{color:#e39be0}
 #contact.dk{background:radial-gradient(60% 60% at 12% -10%,rgba(209,44,191,.12) 0%,transparent 70%),radial-gradient(55% 55% at 92% 105%,rgba(11,191,239,.10) 0%,transparent 70%),#0b0b0f}
-footer{position:relative;margin-top:56px;padding:60px 0 44px;text-align:left}footer .brand-text strong{color:#fff}footer .brand-text small{color:#a9a9b6}
+footer{position:relative;margin-top:56px;padding:60px 0 120px;text-align:left}footer .brand-text strong{color:#fff}footer .brand-text small{color:#a9a9b6}
 footer::before{content:"";position:absolute;top:0;left:50%;width:100vw;transform:translateX(-50%);border-top:1px solid rgba(255,255,255,.14)}
 .fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:56px}
 footer .brand{margin-bottom:18px}
@@ -96,15 +96,15 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
 .so{display:flex;gap:12px;margin-bottom:22px}.so a{width:42px;height:42px;border:1px solid rgba(255,255,255,.16);border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.05)}.so a svg{width:16px;height:16px}.so a:hover{border-color:#d12cbf;color:#e07ce0}
 .cp{position:relative;margin-top:44px;padding-top:22px;color:#7a7a86;font-size:13.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .cp::before{content:"";position:absolute;top:0;left:50%;width:100vw;transform:translateX(-50%);border-top:1px solid rgba(255,255,255,.14)}
-.fl{position:fixed;left:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#12b6ea;color:#fff;display:grid;place-items:center;z-index:55;box-shadow:0 10px 30px rgba(18,182,234,.45)}.fl svg{width:26px;height:26px}
-.top{position:fixed;left:22px;bottom:92px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);color:#0b0b14;display:grid;place-items:center;z-index:55;box-shadow:0 10px 26px rgba(20,10,40,.22);border:1px solid var(--line);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease,visibility 0s linear .3s}
+.fl{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#12b6ea;color:#fff;display:grid;place-items:center;z-index:55;box-shadow:0 10px 30px rgba(18,182,234,.45)}.fl svg{width:26px;height:26px}
+.top{position:fixed;right:22px;bottom:92px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);color:#0b0b14;display:grid;place-items:center;z-index:55;box-shadow:0 10px 26px rgba(20,10,40,.22);border:1px solid var(--line);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease,visibility 0s linear .3s}
 .top.show{opacity:1;visibility:visible;transform:translateY(0);transition:opacity .3s ease,transform .3s ease}
 .top svg{width:20px;height:20px}
 .top:hover{background:#fff}
 @media(max-width:1000px){.row2,.toggle2{grid-template-columns:1fr}.rg{grid-template-columns:1fr 1fr}.afg{grid-template-columns:1fr 1fr}.hw{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1fr}}
 @media(max-width:640px){.sec{padding:70px 0}.rg,.afg,.hw{grid-template-columns:1fr}.audit{padding:40px 24px}.budget-row{flex-direction:column}.budget-row select{max-width:100%!important}}
 @media(max-width:680px){.audit .ct{flex-direction:column;align-items:stretch;gap:12px}.audit .ct .btn{text-align:center;flex-wrap:wrap;padding:13px 22px;font-size:14.5px;row-gap:3px}.audit .ct .btn .hide-xs{display:block;flex-basis:100%;font-size:12.5px;font-weight:600;opacity:.75;margin-top:1px}}
-@media(max-width:640px){footer{padding-bottom:110px}}
+@media(max-width:640px){footer{padding-bottom:140px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none!important}.card:hover{transform:none}}
 @media(hover:none){.btn:hover,a.card:hover{transform:none!important}}
 </style>
@@ -234,7 +234,7 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
   </div>
 </section>
 
-<section id="results" class="sec" style="padding-top:0">
+<section id="results" class="sec" style="padding-top:0;padding-bottom:40px">
   <div class="w" style="max-width:920px">
     <h2>Your Estimated Marketing Results</h2>
     <div class="resmeta">
@@ -246,13 +246,12 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
       <div class="card rc"><div class="lab"><svg class="i" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/></svg> <span id="rLabel">Estimated leads</span></div><div class="num" id="rLeads">25–36</div><p id="rCpl">Estimated cost per lead: Rs2,500–Rs3,500</p></div>
       <div class="card rc"><div class="lab"><svg class="i" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Estimated confirmed students</div><div class="num" id="rStudents">5–8</div><p>Based on typical campaign benchmarks for this market.</p></div>
       <div class="card rc"><div class="lab"><svg class="i" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/></svg> Estimated cost per student</div><div class="num" id="rCps">Rs11,250<br>– Rs18,000</div><p>Total budget divided by the estimated student range.</p></div>
-      <div class="card rc"><div class="lab"><svg class="i" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg> With continuous advertising</div><div class="num" id="rCont">6–10</div><p>Estimated next-month confirmations if you keep running ads consistently.</p></div>
+      <div class="card rc"><div class="lab"><svg class="i" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg> With continuous advertising</div><div class="num" id="rCont">6–10</div><p id="rContCaption">Estimated next-month confirmations if you keep running ads consistently.</p></div>
     </div>
-    <div class="card" style="margin-top:20px">
+    <div class="card" style="margin-top:20px" id="monthsCard">
       <p style="font-weight:700;font-size:16px" id="rMonths">Month 1: 5–8 students · Month 2+: 6–10 students</p>
       <p class="hint" style="margin-top:10px">These estimates are based on typical campaign performance. Consistent advertising can help campaigns gather more data, build audience familiarity, and create more opportunities for conversions. Actual results depend heavily on lead quality and your follow-up process.</p>
     </div>
-    <p class="hint" style="margin-top:18px">These are illustrative estimates based on typical benchmarks — your real results depend on offer, follow-up speed, landing page and creative quality.</p>
   </div>
 </section>
 
@@ -352,7 +351,7 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
             <a href="https://www.instagram.com/subtlexmarketing/" target="_blank" rel="noreferrer" aria-label="Instagram"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
             <a href="https://www.linkedin.com/company/subtle-marketing/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg class="i" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
-          <a href="https://wa.me/923025123508" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:2px;color:#fff;font-weight:700;font-size:15.5px">+92 302 5123508</a><a href="https://wa.me/923309582003" target="_blank" rel="noreferrer" style="display:block;margin-top:6px;color:#fff;font-weight:700;font-size:15.5px">+92 330 9582003</a><h4 style="margin-top:22px;margin-bottom:10px;line-height:1">Locations</h4><p style="margin-top:0;margin-bottom:0;color:#c7c7d2;font-size:14px;line-height:1.6;max-width:300px">2nd Floor, 62 G, Sector L DHA&nbsp;Phase&nbsp;1, Lahore</p><p style="margin-top:10px;margin-bottom:0;color:#c7c7d2;font-size:14px;line-height:1.6;max-width:300px">Office&nbsp;#502, 153 D Bahria Town Civic Center&nbsp;Phase&nbsp;4, Rawalpindi</p>
+          <a href="https://wa.me/923025123508" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:2px;color:#fff;font-weight:700;font-size:15.5px">+92 302 5123508</a><a href="https://wa.me/923309582003" target="_blank" rel="noreferrer" style="display:block;margin-top:6px;color:#fff;font-weight:700;font-size:15.5px">+92 330 9582003</a><h4 style="margin-top:22px;margin-bottom:10px;line-height:1">Locations</h4><p style="margin:0 0 0 0;color:#c7c7d2;font-size:14px;line-height:1.6;max-width:300px">2nd Floor, 62 G, Sector L DHA&nbsp;Phase&nbsp;1, Lahore</p><p style="margin:10px 0 0 0;color:#c7c7d2;font-size:14px;line-height:1.6;max-width:300px">Office&nbsp;#502, 153 D Bahria Town Civic Center&nbsp;Phase&nbsp;4, Rawalpindi</p>
         </div>
       </div>
       <div class="cp">
@@ -420,14 +419,13 @@ let state={budget:90000,currency:'PKR',country:'US',ad:'lead',continuous:'no'};
 const pkrBudget=()=>state.budget/CUR[state.currency].rate;
 const curFmt=pkrAmount=>CUR[state.currency].symbol+Math.round(pkrAmount*CUR[state.currency].rate).toLocaleString('en-US');
 
-function refreshBudgetControls(){
-  const cur=CUR[state.currency];
+// Single source of truth for quick-pick chip clicks, so behavior is identical
+// whether the chips are the original static PKR set or ones regenerated after
+// a currency switch. Always keeps the visible results in sync (calls render()).
+function bindQuickPickClicks(){
+  const qp=document.getElementById('quickPicks');
   const budgetInput=document.getElementById('budget');
   const budgetRange=document.getElementById('budgetRange');
-  budgetInput.min=cur.min; budgetInput.step=cur.step; budgetInput.value=state.budget;
-  budgetRange.min=cur.min; budgetRange.max=cur.max; budgetRange.step=cur.step; budgetRange.value=state.budget;
-  const qp=document.getElementById('quickPicks');
-  qp.innerHTML=cur.quick.map(v=>`<button type="button" class="chip${v===state.budget?' on':''}" data-v="${v}">${cur.symbol}${v.toLocaleString('en-US')}</button>`).join('');
   qp.querySelectorAll('.chip').forEach(btn=>{
     btn.addEventListener('click',()=>{
       state.budget=parseInt(btn.dataset.v,10);
@@ -440,27 +438,57 @@ function refreshBudgetControls(){
   });
 }
 
+function refreshBudgetControls(){
+  const cur=CUR[state.currency];
+  const budgetInput=document.getElementById('budget');
+  const budgetRange=document.getElementById('budgetRange');
+  budgetInput.min=cur.min; budgetInput.max=cur.max; budgetInput.step=cur.step; budgetInput.value=state.budget;
+  budgetRange.min=cur.min; budgetRange.max=cur.max; budgetRange.step=cur.step; budgetRange.value=state.budget;
+  const qp=document.getElementById('quickPicks');
+  qp.innerHTML=cur.quick.map(v=>`<button type="button" class="chip${v===state.budget?' on':''}" data-v="${v}">${cur.symbol}${v.toLocaleString('en-US')}</button>`).join('');
+  bindQuickPickClicks();
+}
+
 function render(){
   const c=COUNTRIES[state.country], ad=AD_TYPE[state.ad];
   const budget=pkrBudget();
   const cplLow=Math.round(c.cpl[0]*ad.cplMult), cplHigh=Math.round(c.cpl[1]*ad.cplMult);
   const leadsLow=Math.floor(budget/cplHigh), leadsHigh=Math.floor(budget/cplLow);
-  let studLow=Math.max(1,Math.round(leadsLow*ad.conv[0])), studHigh=Math.max(studLow+1,Math.round(leadsHigh*ad.conv[1]));
-  const cpsLow=Math.round(budget/studHigh), cpsHigh=Math.round(budget/studLow);
-  const contLow=Math.round(studLow*1.2), contHigh=Math.round(studHigh*1.25);
+  // Budget too small to realistically generate even one lead/message at this
+  // market's rates — don't fake a "1–2 students" floor for a $0 or tiny budget.
+  const hasLeads=leadsHigh>0;
+  let studLow=0, studHigh=0, cpsLow=0, cpsHigh=0, contLow=0, contHigh=0;
+  if(hasLeads){
+    studLow=Math.max(1,Math.round(leadsLow*ad.conv[0]));
+    studHigh=Math.max(studLow+1,Math.round(leadsHigh*ad.conv[1]));
+    cpsLow=Math.round(budget/studHigh); cpsHigh=Math.round(budget/studLow);
+    contLow=Math.round(studLow*1.2); contHigh=Math.round(studHigh*1.25);
+  }
 
   document.getElementById('mBudget').textContent=curFmt(budget)+' '+state.currency;
   document.getElementById('mCountry').textContent=c.name;
   document.getElementById('mAd').textContent=ad.label;
   const unit=state.ad==='message'?'message':'lead';
   document.getElementById('rLabel').textContent='Estimated '+(state.ad==='message'?'messages':'leads');
-  document.getElementById('rLeads').textContent=leadsLow+'–'+leadsHigh;
-  document.getElementById('rCpl').textContent='Estimated cost per '+unit+': '+curFmt(cplLow)+'–'+curFmt(cplHigh);
-  document.getElementById('rStudents').textContent=studLow+'–'+studHigh;
-  document.getElementById('rCps').innerHTML=curFmt(cpsLow)+'<br>– '+curFmt(cpsHigh);
-  document.getElementById('rCont').textContent=contLow+'–'+contHigh;
-  document.getElementById('rMonths').textContent='Month 1: '+studLow+'–'+studHigh+' students · Month 2+: '+contLow+'–'+contHigh+' students';
+  document.getElementById('rLeads').textContent=hasLeads?(leadsLow+'–'+leadsHigh):'0';
+  document.getElementById('rCpl').textContent=hasLeads
+    ?('Estimated cost per '+unit+': '+curFmt(cplLow)+'–'+curFmt(cplHigh))
+    :('Increase your budget — typical cost per '+unit+' here starts around '+curFmt(cplLow)+'.');
+  document.getElementById('rStudents').textContent=hasLeads?(studLow+'–'+studHigh):'0';
+  document.getElementById('rCps').innerHTML=hasLeads?(curFmt(cpsLow)+'<br>– '+curFmt(cpsHigh)):'N/A';
+  document.getElementById('rCont').textContent=hasLeads?(contLow+'–'+contHigh):'0';
+  document.getElementById('rMonths').textContent=hasLeads
+    ?('Month 1: '+studLow+'–'+studHigh+' students · Month 2+: '+contLow+'–'+contHigh+' students')
+    :'Increase your budget to see a monthly student estimate.';
   document.getElementById('adTypeHint').textContent=ad.hint;
+  const monthsCard=document.getElementById('monthsCard'), contCaption=document.getElementById('rContCaption');
+  if(state.continuous==='yes'){
+    monthsCard.style.display='';
+    contCaption.textContent='Estimated next-month confirmations if you keep running ads consistently.';
+  }else{
+    monthsCard.style.display='none';
+    contCaption.textContent='Switch on continuous monthly advertising above to plan for month 2+.';
+  }
 }
 
 document.getElementById('currency').addEventListener('change',e=>{
@@ -476,7 +504,9 @@ document.getElementById('currency').addEventListener('change',e=>{
 });
 
 document.getElementById('budget').addEventListener('input',e=>{
-  state.budget=Math.max(0,parseInt(e.target.value||0,10));
+  const cur=CUR[state.currency];
+  const raw=parseInt(e.target.value||0,10);
+  state.budget=Math.max(0,Math.min(cur.max,raw));
   document.getElementById('budgetRange').value=state.budget;
   document.querySelectorAll('#quickPicks .chip').forEach(c=>c.classList.toggle('on',parseInt(c.dataset.v,10)===state.budget));
 });
@@ -485,15 +515,7 @@ document.getElementById('budgetRange').addEventListener('input',e=>{
   document.getElementById('budget').value=state.budget;
   document.querySelectorAll('#quickPicks .chip').forEach(c=>c.classList.toggle('on',parseInt(c.dataset.v,10)===state.budget));
 });
-document.querySelectorAll('#quickPicks .chip').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    state.budget=parseInt(btn.dataset.v,10);
-    document.getElementById('budget').value=state.budget;
-    document.getElementById('budgetRange').value=state.budget;
-    document.querySelectorAll('#quickPicks .chip').forEach(c=>c.classList.remove('on'));
-    btn.classList.add('on');
-  });
-});
+bindQuickPickClicks();
 document.getElementById('country').addEventListener('change',e=>{state.country=e.target.value;});
 document.querySelectorAll('#adType .op').forEach(btn=>{
   btn.addEventListener('click',()=>{
@@ -506,6 +528,7 @@ document.querySelectorAll('#continuous .op').forEach(btn=>{
   btn.addEventListener('click',()=>{
     document.querySelectorAll('#continuous .op').forEach(b=>b.classList.remove('on'));
     btn.classList.add('on'); state.continuous=btn.dataset.v;
+    render();
   });
 });
 document.getElementById('heroCalcBtn').addEventListener('click',e=>{
