@@ -13,14 +13,14 @@
 <meta property="og:site_name" content="Mubashir Ahmed">
 <meta property="og:title" content="Marketing Estimator | Mubashir Ahmed — Leads &amp; Students Calculator">
 <meta property="og:description" content="Enter your advertising budget and target market to see estimated leads, messages, and potential student confirmations for your Quran academy.">
-<meta property="og:image" content="https://mubashirthemarketer.vercel.app/assets/og-image.jpg">
+<meta property="og:image" content="https://subtlemarketing.vercel.app/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://mubashirthemarketer.vercel.app/marketing-estimator">
+<meta property="og:url" content="https://subtlemarketing.vercel.app/marketing-estimator">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Marketing Estimator | Mubashir Ahmed — Leads &amp; Students Calculator">
 <meta name="twitter:description" content="Enter your advertising budget and target market to see estimated leads, messages, and potential student confirmations for your Quran academy.">
-<meta name="twitter:image" content="https://mubashirthemarketer.vercel.app/assets/og-image.jpg">
+<meta name="twitter:image" content="https://subtlemarketing.vercel.app/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -375,7 +375,6 @@ bg.addEventListener('click',()=>{nav.classList.toggle('o');bg.textContent=nav.cl
 window.addEventListener('scroll',()=>{if(nav.classList.contains('o')){nav.classList.remove('o');bg.textContent='☰';}});
 document.querySelectorAll('.nav nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('o');bg.textContent='☰';}));
 
-// ---- Estimator logic ----
 const COUNTRIES={
   US:{name:'United States',cpl:[2500,3500]},
   CA:{name:'Canada',cpl:[2300,3200]},
@@ -415,13 +414,10 @@ const CUR={
 
 let state={budget:90000,currency:'PKR',country:'US',ad:'lead',continuous:'no'};
 
-// state.budget is always stored in the *currently selected currency's* units.
+// budget stays in whatever currency is currently picked
 const pkrBudget=()=>state.budget/CUR[state.currency].rate;
 const curFmt=pkrAmount=>CUR[state.currency].symbol+Math.round(pkrAmount*CUR[state.currency].rate).toLocaleString('en-US');
 
-// Single source of truth for quick-pick chip clicks, so behavior is identical
-// whether the chips are the original static PKR set or ones regenerated after
-// a currency switch. Always keeps the visible results in sync (calls render()).
 function bindQuickPickClicks(){
   const qp=document.getElementById('quickPicks');
   const budgetInput=document.getElementById('budget');
@@ -454,8 +450,7 @@ function render(){
   const budget=pkrBudget();
   const cplLow=Math.round(c.cpl[0]*ad.cplMult), cplHigh=Math.round(c.cpl[1]*ad.cplMult);
   const leadsLow=Math.floor(budget/cplHigh), leadsHigh=Math.floor(budget/cplLow);
-  // Budget too small to realistically generate even one lead/message at this
-  // market's rates — don't fake a "1–2 students" floor for a $0 or tiny budget.
+  // low budget(if it can't even afford 1 lead, just show 0)
   const hasLeads=leadsHigh>0;
   let studLow=0, studHigh=0, cpsLow=0, cpsHigh=0, contLow=0, contHigh=0;
   if(hasLeads){
