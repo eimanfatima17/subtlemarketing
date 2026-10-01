@@ -51,10 +51,15 @@ a.card:hover::before{transform:scaleX(1)}
 .nav nav{display:flex;gap:34px;font-weight:600;color:#33334a}.nav nav a:hover,.nav nav a.on{color:#d12cbf}
 .ct{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.bg{display:none;background:none;border:0;color:#0b0b14;font-size:26px;cursor:pointer}
 @media(max-width:1050px){.nav nav{position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:10px;padding:24px;border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .28s ease,transform .28s ease,visibility 0s linear .28s;pointer-events:none;overflow:hidden;box-shadow:0 20px 50px rgba(20,10,40,.18);max-height:calc(100vh - 90px);overflow-y:auto}.bg{display:block}.nav.o nav{opacity:1;visibility:visible;transform:translateY(0);transition:opacity .28s ease,transform .28s ease;pointer-events:auto}.nav nav a{padding:13px 16px;border-radius:var(--r-sm);transition:.15s}.nav nav a.on{background:rgba(209,44,191,.1);color:#d12cbf}.nav nav .mbtn{display:flex;width:100%;justify-content:center;margin-top:10px}.nav nav .mbtn:first-of-type{margin-top:14px;border-top:1px solid var(--line);padding-top:20px}.nav .ct a.btn{display:none}}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:150px 24px 80px;background:radial-gradient(50% 40% at 50% 5%,#dcebfb 0%,transparent 72%),radial-gradient(45% 45% at 90% 95%,rgba(209,44,191,.16) 0%,transparent 72%),#f1ecf9}
-.hero .h1a{display:block;font-size:clamp(21px,2.8vw,38px);font-weight:700;margin-bottom:4px}
-.hero .word{display:block;font-size:clamp(48px,9vw,110px);letter-spacing:-.045em;line-height:1.06;color:#d12cbf}
-.hero p{max-width:680px;margin:28px auto 38px;color:var(--mu);font-size:clamp(17px,1.5vw,20px)}.hero p b{color:var(--tx)}
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:118px 24px 72px;background:radial-gradient(50% 40% at 50% 5%,#dcebfb 0%,transparent 72%),radial-gradient(45% 45% at 90% 95%,rgba(209,44,191,.16) 0%,transparent 72%),#f1ecf9}
+.hero .hero-badge{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;margin-bottom:18px;border-radius:99px;background:rgba(255,255,255,.6);border:1px solid var(--line);font-size:11.5px;letter-spacing:.18em;line-height:1.3}
+.hero h1{max-width:980px;margin:0 auto}
+.hero .h1a{display:block;font-size:clamp(20px,2.4vw,34px);font-weight:700;margin-bottom:6px}
+.hero .word{display:block;font-size:clamp(28px,4.2vw,56px);font-weight:800;letter-spacing:-.04em;line-height:1.08;color:#d12cbf;max-width:960px;margin:0 auto}
+.hero p{max-width:620px;margin:18px auto 28px;color:var(--mu);font-size:clamp(15px,1.3vw,18px);line-height:1.65}.hero p b{color:var(--tx)}
+.hero .ct .btn{padding:13px 26px;font-size:15px}
+@media(max-width:1050px){.hero{padding:112px 24px 64px}}
+@media(max-width:640px){.hero{min-height:auto;padding:104px 20px 56px}.hero .hero-badge{font-size:10.5px;letter-spacing:.14em;padding:6px 14px;margin-bottom:14px}.hero .h1a{font-size:19px;margin-bottom:4px}.hero .word{font-size:26px;line-height:1.12}.hero p{font-size:14.5px;line-height:1.6;max-width:32ch;margin:14px auto 22px}.hero .ct{flex-direction:column;gap:10px}.hero .ct .btn{width:100%;max-width:290px;padding:12px 22px;font-size:14.5px}}
 
 .st{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:56px auto 0}
 .st .card{text-align:center}
@@ -187,10 +192,10 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
 
 <section class="hero">
   <div class="w">
-    <div class="ey" style="display:inline-flex;padding:10px 20px;border-radius:99px;background:rgba(255,255,255,.6);border:1px solid var(--line)">✨ #1 Growth Strategist for Quran Academies</div>
+    <div class="ey hero-badge">✨ #1 Growth Strategist for Quran Academies</div>
     <h1>
       <span class="h1a">Stop Wasting Ad Spend on Unconverted Trial Classes.</span>
-      <span class="word" style="font-size:clamp(30px,4.6vw,60px);max-width:1100px;margin:6px auto 0">We Deliver High-Paying Paid Enrolments in the UK, US &amp; Gulf.</span>
+      <span class="word">We Deliver High-Paying Paid Enrolments in the UK, US &amp; Gulf.</span>
     </h1>
     <p>Subtle Marketing builds high-ROI ad campaigns, automated WhatsApp trial-to-paid follow-ups, and conversion tracking specifically engineered for Quran Academy owners seeking high-retention students.</p>
     <div class="ct" style="justify-content:center">
