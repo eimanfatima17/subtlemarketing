@@ -26,20 +26,20 @@
 <meta name="twitter:image" content="https://learnquran.subtle-marketing.com/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--tx:#0b0b14;--mu:#5a5a70;--ey:#a51d94;--line:rgba(30,10,70,.10);--card:rgba(255,255,255,.74);--g:linear-gradient(90deg,#d12cbf 0%,#0bbfef 100%);--sec:linear-gradient(135deg,#bf3eff 0%,#00bcee 100%);--r-sm:12px;--r-md:20px;--r-lg:28px;--r-pill:999px;--glow-shadow:0 18px 36px rgba(90,40,140,.12);font-family:'Montserrat',system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;overflow-x:hidden;overscroll-behavior-x:none}
 body{color:var(--tx);line-height:1.62;overflow-x:hidden;overscroll-behavior-x:none;-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,#eee6f9,#f8f4fd 40%,#eee6f9)}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}button{font-family:inherit}svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .w{max-width:1420px;margin:0 auto;padding:0 24px}
 :focus-visible{outline:2px solid #0b0b14;outline-offset:3px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;border-radius:var(--r-pill);font-weight:700;font-size:16px;background:var(--g);color:#fff;border:1px solid transparent;cursor:pointer;transition:.2s}
 .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.btn.gh{background:rgba(255,255,255,.85);color:var(--tx);border-color:var(--line)}.btn.wh{background:#fff;color:#0b0b14}.btn.dk{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.4);color:#fff}.btn.dk:hover{background:#d12cbf;border-color:transparent;filter:none}.btn.sm{padding:12px 22px;font-size:15px}
 .mbtn{display:none}
 .ey{font-size:13px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--ey);margin-bottom:20px}
-h1,h2,h3{letter-spacing:-.035em;line-height:1.06;font-weight:800}h2{font-size:clamp(30px,4.2vw,54px)}
-.sec{padding:120px 0}section[id]{scroll-margin-top:100px}
+h1,h2,h3{letter-spacing:-.035em;line-height:1.06;font-weight:800}h3{font-size:21px}h2{font-size:clamp(28px,3.4vw,42px)}
+.sec{padding:120px 0}[id]{scroll-margin-top:100px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;backdrop-filter:blur(8px);box-shadow:0 8px 28px rgba(90,40,140,.06);position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .45s}
 .card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--g);transform:scaleX(0);transform-origin:0 50%;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 a.card:hover{transform:translateY(-6px);box-shadow:var(--glow-shadow);border-color:rgba(209,44,191,.35)}
@@ -49,25 +49,22 @@ a.card:hover::before{transform:scaleX(1)}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700}.brand-text{display:flex;flex-direction:column;line-height:1.08}.brand-text strong{font-size:15px;font-weight:800;letter-spacing:.3px;color:var(--tx)}.brand-text small{font-size:10px;font-weight:600;letter-spacing:3px;color:var(--mu)}
 .brand img.logo-mark{height:36px;width:auto;flex:none}
 .nav nav{display:flex;gap:34px;font-weight:600;color:#33334a}.nav nav a:hover,.nav nav a.on{color:#d12cbf}
-.ct{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.bg{display:none;background:none;border:0;color:#0b0b14;font-size:26px;cursor:pointer}
-@media(max-width:1050px){.nav nav{position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:10px;padding:24px;border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .28s ease,transform .28s ease,visibility 0s linear .28s;pointer-events:none;overflow:hidden;box-shadow:0 20px 50px rgba(20,10,40,.18);max-height:calc(100vh - 90px);overflow-y:auto}.bg{display:block}.nav.o nav{opacity:1;visibility:visible;transform:translateY(0);transition:opacity .28s ease,transform .28s ease;pointer-events:auto}.nav nav a{padding:13px 16px;border-radius:var(--r-sm);transition:.15s}.nav nav a.on{background:rgba(209,44,191,.1);color:#d12cbf}.nav nav .mbtn{display:flex;width:100%;justify-content:center;margin-top:10px}.nav nav .mbtn:first-of-type{margin-top:14px;border-top:1px solid var(--line);padding-top:20px}.nav .ct a.btn{display:none}}
+.ct{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.bg{display:none;background:none;border:0;color:#0b0b14;font-size:26px;cursor:pointer;min-width:44px;min-height:44px}
+@media(max-width:1050px){.nav nav{position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:10px;padding:24px;border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .28s ease,transform .28s ease,visibility 0s linear .28s;pointer-events:none;overflow:hidden;box-shadow:0 20px 50px rgba(20,10,40,.18);max-height:calc(100vh - 90px);overflow-y:auto}.bg{display:block}.nav.o nav{opacity:1;visibility:visible;transform:translateY(0);transition:opacity .28s ease,transform .28s ease;pointer-events:auto}.nav nav a{padding:13px 16px;border-radius:var(--r-sm);transition:.15s}.nav nav a.on{background:rgba(209,44,191,.1);color:#d12cbf}.nav nav .mbtn{display:flex;width:100%;justify-content:center;margin-top:10px}.nav nav a:not(.mbtn)+.mbtn{position:relative;margin-top:24px}.nav nav a:not(.mbtn)+.mbtn::before{content:"";position:absolute;left:0;right:0;top:-17px;border-top:1px solid var(--line)}.nav .ct a.btn{display:none}}
 .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:118px 24px 72px;background:radial-gradient(50% 40% at 50% 5%,#dcebfb 0%,transparent 72%),radial-gradient(45% 45% at 90% 95%,rgba(209,44,191,.16) 0%,transparent 72%),#f1ecf9}
-.hero .hero-badge{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;margin-bottom:18px;border-radius:99px;background:rgba(255,255,255,.6);border:1px solid var(--line);font-size:12px;letter-spacing:.22em;line-height:1.3}
+.hero>.w{width:100%}.hero .hero-badge{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;margin-bottom:18px;border-radius:99px;background:rgba(255,255,255,.6);border:1px solid var(--line);font-size:12px;letter-spacing:.22em;line-height:1.3}
 .hero h1{max-width:980px;margin:0 auto}
 .hero .h1a{display:block;font-size:clamp(20px,2.6vw,34px);font-weight:700;line-height:1.2;margin-bottom:10px;text-wrap:balance}
-.hero .word{display:block;font-size:clamp(32px,5vw,58px);font-weight:800;letter-spacing:-.035em;line-height:1.1;color:#d12cbf;max-width:960px;margin:0 auto;text-wrap:balance}
-.hero p{max-width:620px;margin:22px auto 32px;text-wrap:pretty;color:var(--mu);font-size:clamp(15px,1.3vw,18px);line-height:1.65}.hero p b{color:var(--tx)}
+.hero .word{display:block;font-size:clamp(34px,5vw,58px);font-weight:800;letter-spacing:-.035em;line-height:1.1;color:#d12cbf;max-width:960px;margin:0 auto;text-wrap:balance}
+.hero .w>p{max-width:620px;margin:22px auto 32px;text-wrap:pretty;color:var(--mu);font-size:clamp(15px,1.3vw,18px);line-height:1.65}.hero .w>p b{color:var(--tx)}
 .hero .ct .btn{padding:13px 26px;font-size:15px}
 @media(max-width:1050px){.hero{padding:112px 24px 64px}}
-@media(max-width:640px){.hero{min-height:auto;padding:104px 20px 52px}.hero .hero-badge{font-size:11px;letter-spacing:.16em;padding:6px 14px;margin-bottom:20px}.hero .h1a{font-size:21px;line-height:1.22;margin-bottom:8px;padding:0 4px}.hero .word{font-size:33px;line-height:1.12;letter-spacing:-.03em}.hero p{font-size:15px;line-height:1.65;max-width:34ch;margin:18px auto 26px}.hero .ct{flex-direction:column;align-items:center;gap:12px}.hero .ct .btn{width:100%;max-width:320px;padding:14px 22px;font-size:15px}}
+@media(max-width:640px){.hero{min-height:auto;padding:104px 20px 52px}.hero .hero-badge{font-size:11px;letter-spacing:.16em;padding:6px 14px;margin-bottom:20px}.hero .h1a{font-size:21px;line-height:1.22;margin-bottom:8px;padding:0 4px}.hero .word{font-size:34px;line-height:1.12;letter-spacing:-.03em}.hero .w>p{font-size:15px;line-height:1.65;max-width:34ch;margin:18px auto 26px}.hero .ct{flex-direction:column;align-items:center;gap:12px}.hero .ct .btn{width:100%;max-width:320px;padding:14px 22px;font-size:15px}}
 
 .st{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:56px auto 0}
 .st .card{text-align:center}
 .st .card:hover{transform:translateY(-6px);box-shadow:var(--glow-shadow);border-color:rgba(209,44,191,.35)}
 .st .card:hover::before{transform:scaleX(1)}.st svg{color:#d12cbf;width:26px;height:26px;margin-bottom:16px}.st b{display:block;font-size:46px;font-weight:800;letter-spacing:-.045em;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}.st span{color:var(--mu);font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.tk{margin-top:70px;border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:22px 0;width:100vw;position:relative;left:50%;transform:translateX(-50%)}
-.tk div{display:inline-flex;gap:50px;animation:m 26s linear infinite;padding-right:50px}.tk span{font-weight:700;letter-spacing:.12em;color:#3a3a52;font-size:15px;text-transform:uppercase;display:inline-flex;gap:50px;align-items:center}.tk span:after{content:"";width:8px;height:8px;border-radius:50%;background:var(--g)}
-@keyframes m{to{transform:translateX(-50%)}}
 .lgw{margin-top:56px;overflow:hidden;position:relative;width:100vw;left:50%;transform:translateX(-50%);padding:8px 0 24px}
 .lgw p{text-align:center;font-size:13px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--ey);margin-bottom:22px}
 .lgt{display:inline-flex;align-items:center;gap:22px;white-space:nowrap;animation:m2 36s linear infinite}
@@ -75,27 +72,17 @@ a.card:hover::before{transform:scaleX(1)}
 .lgc:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(30,10,70,.2)}
 .lgc img{max-height:34px;max-width:100px;width:auto;height:auto;object-fit:contain;display:block}
 @keyframes m2{to{transform:translateX(-50%)}}
+.lgw:hover .lgt{animation-play-state:paused}
 @media(max-width:640px){.lgc{height:50px;min-width:85px;padding:8px 16px}.lgc img{max-height:26px;max-width:80px}}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
-.span2{grid-column:span 2}
 .sv{padding:34px;transition:.2s;position:relative;display:block}a.sv:hover{border-color:rgba(209,44,191,.5)}.sv .ic{width:54px;height:54px;border-radius:var(--r-sm);background:rgba(209,44,191,.1);color:#d12cbf;display:grid;place-items:center;margin-bottom:24px}.sv .ic svg{width:24px;height:24px}
 .sv .arw2{position:absolute;top:24px;right:24px;width:34px;height:34px;border-radius:50%;background:rgba(11,11,20,.06);display:grid;place-items:center;color:#0b0b14;transition:.2s}.sv .arw2 svg{width:16px;height:16px}a.sv:hover .arw2{background:#0b0b14;color:#fff}
-.sv h3{font-size:21px;margin-bottom:10px}.sv p{color:var(--mu);font-size:16px}
+.sv h3{margin-bottom:10px}.sv p{color:var(--mu);font-size:16px}
 div.sv:hover{transform:translateY(-6px);box-shadow:var(--glow-shadow);border-color:rgba(209,44,191,.35)}
 div.sv:hover::before{transform:scaleX(1)}
-.sol{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;margin-top:56px;align-items:start}
 .badge{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:var(--r-pill);background:#0b0b14;color:#fff;font-weight:600;font-size:14px;margin-top:26px}
 .badge:before{content:"";width:8px;height:8px;border-radius:50%;background:#0bbfef}
-.step{border:1px solid var(--line);border-radius:var(--r-md);background:var(--card);margin-bottom:14px;overflow:hidden}
-.step summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:18px;padding:24px 28px;font-weight:700;font-size:18px}
-.step summary::-webkit-details-marker{display:none}
-.step .num{font-size:13px;color:var(--mu);font-weight:700}
-.step .ic{width:38px;height:38px;border-radius:var(--r-sm);background:rgba(209,44,191,.12);color:#d12cbf;display:grid;place-items:center;flex:none}.step .ic svg{width:18px;height:18px}
-.step .arw{margin-left:auto;transition:.2s}.step .arw svg{width:18px;height:18px}.step[open] .arw{transform:rotate(90deg)}
-.step p{padding:0 28px 26px 84px;color:var(--mu);font-size:15.5px}
-.step[open]{border-color:rgba(209,44,191,.3)}
 .dk{background:#0b0b0f;color:#fff}.dk .mu{color:#a9a9b6}.dk .ey{color:#e39be0}
 #contact.dk{background:radial-gradient(60% 60% at 12% -10%,rgba(209,44,191,.12) 0%,transparent 70%),radial-gradient(55% 55% at 92% 105%,rgba(11,191,239,.10) 0%,transparent 70%),#0b0b0f}
 .dk .card{background:#17161d;border-color:rgba(255,255,255,.09)}
@@ -103,8 +90,6 @@ div.sv:hover::before{transform:scaleX(1)}
 .res-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
 #results .card:hover{transform:translateY(-6px);box-shadow:var(--glow-shadow);border-color:rgba(209,44,191,.35)}
 #results .card:hover::before{transform:scaleX(1)}
-.bars{display:flex;gap:9px;align-items:flex-end;height:76px;margin-top:22px}
-.bars i{flex:1;border-radius:14px;background:var(--g)}
 .stat-big{font-size:42px;font-weight:800;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent;margin:14px 0 4px}
 .tm{padding:30px}.tm .stars{color:#0bbfef;font-size:14px;letter-spacing:2px;margin-bottom:14px}
 .tm p{font-size:16px;margin-bottom:22px}.tm .who{display:flex;gap:12px;align-items:center}
@@ -132,7 +117,7 @@ div.sv:hover::before{transform:scaleX(1)}
 .audit .btn.wh:hover{filter:none;background:#fff;transform:translateY(-1px)}
 .audit .btn.outline{background:transparent;border:1.5px solid rgba(255,255,255,.5);color:#fff}
 .audit .btn.outline:hover{background:#fff;border-color:transparent;color:#4c1367;filter:none}
-.fc{text-align:center;padding:120px 0}.fc h2{font-size:clamp(34px,5.6vw,68px);max-width:900px;margin:0 auto 22px}.fc p{color:#a9a9b6;font-size:18px;max-width:600px;margin:0 auto 36px}
+.fc{text-align:center;padding:120px 0}.fc h2{max-width:900px;margin:0 auto 22px}.fc p{color:#a9a9b6;font-size:18px;max-width:600px;margin:0 auto 36px}
 footer{position:relative;margin-top:56px;padding:60px 0 120px;text-align:left}footer .brand-text strong{color:#fff}footer .brand-text small{color:#a9a9b6}
 footer::before{content:"";position:absolute;top:0;left:50%;width:100vw;transform:translateX(-50%);border-top:1px solid rgba(255,255,255,.14)}
 .fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:56px}
@@ -156,25 +141,24 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
 .btn.pulse{animation:pulseGlow 2.4s ease-in-out infinite}
 @keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 rgba(209,44,191,.5)}50%{box-shadow:0 0 0 16px rgba(209,44,191,0)}}
 @media(prefers-reduced-motion:reduce){.btn.pulse{animation:none}}
-@media(max-width:1000px){.g4{grid-template-columns:repeat(2,1fr)}.g2,.sol,.about{grid-template-columns:1fr}.fg{grid-template-columns:1fr}.g3{grid-template-columns:1fr}.span2{grid-column:span 1}}
-@media(max-width:640px){.sec{padding:80px 0}.st{grid-template-columns:1fr}.g4,.g3{grid-template-columns:1fr}.audit{padding:44px 26px}.step p{padding-left:28px}.audit .ct{flex-direction:column;align-items:stretch;gap:12px}.audit .ct .btn{padding:13px 22px;font-size:14.5px}}
+@media(max-width:1000px){.g4{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr}.fg{grid-template-columns:1fr}.g3{grid-template-columns:1fr}}
+@media(max-width:640px){.sec{padding:80px 0}.st{grid-template-columns:1fr}.g4,.g3{grid-template-columns:1fr}.audit{padding:44px 26px}.audit .ct{flex-direction:column;align-items:stretch;gap:12px}.audit .ct .btn{padding:13px 22px;font-size:14.5px}}
 @media(max-width:520px){.hide-xs{display:none}}
 @media(max-width:640px){footer{padding-bottom:140px}}
 .g4.two-col{grid-template-columns:repeat(2,1fr)}
 @media(max-width:700px){.g4.two-col{grid-template-columns:1fr}}
 @media(max-width:1050px){.res-top{flex-direction:column;align-items:stretch}.res-top .ct{justify-content:flex-start}}
 @media(max-width:480px){.res-top .ct{flex-direction:column;align-items:stretch}.res-top .ct .btn{width:100%}}
-@media(prefers-reduced-motion:reduce){.tk div{animation:none}html{scroll-behavior:auto}.card{transition:none!important}.card:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.lgt{animation:none;display:flex;flex-wrap:wrap;justify-content:center;white-space:normal}.lgt .lgc[aria-hidden]{display:none}.lgw{width:auto;left:auto;transform:none}html{scroll-behavior:auto}.card{transition:none!important}.card:hover{transform:none}}
 @media(hover:none){.btn:hover,a.card:hover,.st .card:hover,div.sv:hover,#results .card:hover,.audit .btn.wh:hover{transform:none!important}}
 .cp .cl{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.cp .cl i{width:1px;height:14px;background:rgba(255,255,255,.28)}.cp a:hover{color:#e07ce0}.fa{text-decoration:underline;text-underline-offset:3px}.fa:hover{color:#e07ce0}@media(max-width:640px){.cp{flex-direction:column;align-items:flex-start;gap:14px}}
-.pg{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:1fr;gap:20px;margin-top:40px}.pc{padding:24px 26px}.pc::before{transform:scaleX(1)}.pc h3{font-size:17px;margin:0 0 12px}.pc p{color:var(--mu);font-size:14.5px;line-height:1.6}.pc p b{color:var(--tx)}.pc ul{list-style:disc;margin:12px 0 0;padding-left:22px;display:grid;gap:6px}.pc li{font-size:14.5px;font-weight:400;color:var(--tx)}.g2c{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:56px}@media(max-width:800px){.pg,.g2c{grid-template-columns:1fr}}
+.pg{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:1fr;gap:20px;margin-top:40px}.pc{padding:24px 26px}.pc::before{transform:scaleX(1)}.pc h3{margin:0 0 12px}.pc p{color:var(--mu);font-size:14.5px;line-height:1.6}.pc p b{color:var(--tx)}.pc ul{list-style:disc;margin:12px 0 0;padding-left:22px;display:grid;gap:6px}.pc li{font-size:14.5px;font-weight:400;color:var(--tx)}.g2c{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:56px}@media(max-width:800px){.pg,.g2c{grid-template-columns:1fr}}
 
-/* ===== Mobile polish (<=640px) ===== */
 @media(max-width:640px){
 html{-webkit-text-size-adjust:100%}
 .w{padding:0 18px}
 .sec{padding:60px 0}
-h2{font-size:27px;line-height:1.12}
+h2{line-height:1.12}h3{font-size:17px}
 .ey{font-size:11px;letter-spacing:.2em;margin-bottom:12px}
 .nav{top:10px;width:calc(100% - 20px);padding:9px 14px;gap:12px}
 .brand{gap:9px}.brand img.logo-mark{height:30px}.brand-text strong{font-size:14px}.brand-text small{font-size:8.5px;letter-spacing:2.4px}
@@ -193,17 +177,17 @@ h2{font-size:27px;line-height:1.12}
 .g4 .card.sv .ic{grid-row:1/3;width:46px;height:46px;margin:0;border-radius:12px}
 .g4 .card.sv .ic svg{width:21px;height:21px}
 #services .sv .ic{width:46px;height:46px;box-shadow:none}
-.g4 .card.sv h3{font-size:16px;margin:0 0 4px;padding-right:30px;line-height:1.2}
+.g4 .card.sv h3{margin:0 0 4px;padding-right:30px;line-height:1.2}
 .g4 .card.sv p{font-size:13.5px;line-height:1.5}
 .sv .arw2{top:14px;right:14px;width:28px;height:28px}
 .badge{font-size:12px;padding:9px 14px;margin-top:18px}
 .pg{gap:12px;margin-top:24px}
-.pc{padding:18px}.pc h3{font-size:15.5px;margin-bottom:8px}.pc p,.pc li{font-size:13.5px}
+.pc{padding:18px}.pc h3{margin-bottom:8px}.pc p,.pc li{font-size:13.5px}
 .res-top{gap:18px}
 #results .g2c{grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
 #results .g2c .card{padding:20px 12px!important}
 #results .g2c .stat-big{font-size:32px!important}
-#results .g2c h3{font-size:14px!important;margin:8px 0 4px!important}
+#results .g2c h3{margin:8px 0 4px!important}
 #results .g2c p{font-size:12px!important;line-height:1.45}
 .about{gap:22px}
 .about .ph{aspect-ratio:16/10;border-radius:20px}
@@ -231,8 +215,8 @@ footer p{font-size:14px;margin-bottom:18px}
 <body>
 
 <div class="nav" id="nav">
-  <a class="brand" href="#"><img class="logo-mark" src="assets/logo-icon.png" alt="Subtle Marketing"><span class="brand-text"><strong>SUBTLE</strong><small>MARKETING</small></span></a>
-  <nav>
+  <a class="brand" href="#"><img width="413" height="413" class="logo-mark" src="assets/logo-icon.png" alt="Subtle Marketing"><span class="brand-text"><strong>SUBTLE</strong><small>MARKETING</small></span></a>
+  <nav id="site-nav">
     <a class="on" href="#">Home</a>
     <a href="#results">Case Studies</a>
     <a href="#services">Services</a>
@@ -244,7 +228,7 @@ footer p{font-size:14px;margin-bottom:18px}
   <div class="ct">
     <a class="btn gh sm" href="marketing-estimator/">Marketing Estimator</a>
     <a class="btn sm" href="free-audit/">Free Audit</a>
-    <button class="bg" id="bg" aria-label="Menu">☰</button>
+    <button class="bg" id="bg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
   </div>
 </div>
 
@@ -268,44 +252,44 @@ footer p{font-size:14px;margin-bottom:18px}
     <div class="lgw">
       <p>Companies We've Collaborated With</p>
       <div class="lgt">
-        <div class="lgc"><img src="assets/logos/ihs.png" alt="IHS" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/telenor.png" alt="Telenor" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/mall-of-lahore.png" alt="Mall of Lahore" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/sharif-trust.png" alt="Sharif Trust" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/ahmed-fabrics.png" alt="Ahmed Fabrics" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/central.png" alt="Central" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/va.png" alt="VA" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/greentainer.png" alt="Greentainer" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/rk-group.png" alt="RK Group" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/sassy.png" alt="Sassy" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/calico.png" alt="Calico" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/popnest.png" alt="Popnest" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/doctor-elements.png" alt="Doctor Elements Cosmeceuticals" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/being-humanitarian.png" alt="Being Humanitarian" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/rh.png" alt="RH" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/mukhtar-hospital.png" alt="Mukhtar A. Sheikh Hospital" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/born-uniforms.png" alt="Born Uniforms" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/mehreen-humayun.png" alt="Mehreen Humayun" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/scandiborn.png" alt="Scandiborn" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/ihs.png" alt="IHS" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/telenor.png" alt="Telenor" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/mall-of-lahore.png" alt="Mall of Lahore" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/sharif-trust.png" alt="Sharif Trust" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/ahmed-fabrics.png" alt="Ahmed Fabrics" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/central.png" alt="Central" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/va.png" alt="VA" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/greentainer.png" alt="Greentainer" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/rk-group.png" alt="RK Group" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/sassy.png" alt="Sassy" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/calico.png" alt="Calico" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/popnest.png" alt="Popnest" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/doctor-elements.png" alt="Doctor Elements Cosmeceuticals" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/being-humanitarian.png" alt="Being Humanitarian" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/rh.png" alt="RH" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/mukhtar-hospital.png" alt="Mukhtar A. Sheikh Hospital" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/born-uniforms.png" alt="Born Uniforms" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/mehreen-humayun.png" alt="Mehreen Humayun" loading="lazy"></div>
-        <div class="lgc"><img src="assets/logos/scandiborn.png" alt="Scandiborn" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/ihs.png" alt="IHS" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="101" src="assets/logos/telenor.png" alt="Telenor" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/mall-of-lahore.png" alt="Mall of Lahore" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="83" src="assets/logos/sharif-trust.png" alt="Sharif Trust" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/ahmed-fabrics.png" alt="Ahmed Fabrics" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/central.png" alt="Central" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/va.png" alt="VA" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/greentainer.png" alt="Greentainer" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="102" src="assets/logos/rk-group.png" alt="RK Group" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/sassy.png" alt="Sassy" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/calico.png" alt="Calico" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/popnest.png" alt="Popnest" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="58" src="assets/logos/doctor-elements.png" alt="Doctor Elements Cosmeceuticals" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/being-humanitarian.png" alt="Being Humanitarian" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/rh.png" alt="RH" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="24" src="assets/logos/mukhtar-hospital.png" alt="Mukhtar A. Sheikh Hospital" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/born-uniforms.png" alt="Born Uniforms" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/mehreen-humayun.png" alt="Mehreen Humayun" loading="lazy"></div>
+        <div class="lgc"><img width="110" height="110" src="assets/logos/scandiborn.png" alt="Scandiborn" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/ihs.png" alt="IHS" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="101" src="assets/logos/telenor.png" alt="Telenor" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/mall-of-lahore.png" alt="Mall of Lahore" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="83" src="assets/logos/sharif-trust.png" alt="Sharif Trust" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/ahmed-fabrics.png" alt="Ahmed Fabrics" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/central.png" alt="Central" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/va.png" alt="VA" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/greentainer.png" alt="Greentainer" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="102" src="assets/logos/rk-group.png" alt="RK Group" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/sassy.png" alt="Sassy" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/calico.png" alt="Calico" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/popnest.png" alt="Popnest" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="58" src="assets/logos/doctor-elements.png" alt="Doctor Elements Cosmeceuticals" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/being-humanitarian.png" alt="Being Humanitarian" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/rh.png" alt="RH" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="24" src="assets/logos/mukhtar-hospital.png" alt="Mukhtar A. Sheikh Hospital" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/born-uniforms.png" alt="Born Uniforms" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/mehreen-humayun.png" alt="Mehreen Humayun" loading="lazy"></div>
+        <div class="lgc" aria-hidden="true"><img width="110" height="110" src="assets/logos/scandiborn.png" alt="Scandiborn" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -353,8 +337,8 @@ footer p{font-size:14px;margin-bottom:18px}
       </div>
     </div>
     <div class="g2c">
-      <div class="card" style="text-align:center;padding:40px 32px"><div class="stat-big" style="font-size:clamp(44px,5vw,56px);margin:0 0 4px;display:inline-block;background-size:256% 100%;background-repeat:no-repeat;line-height:1.15">320+</div><h3 style="font-size:20px;margin:14px 0 8px">New Paid Enrolments</h3><p class="mu" style="font-size:15px">Generated for UK-based Quran Academy in 120 Days</p></div>
-      <div class="card" style="text-align:center;padding:40px 32px"><div class="stat-big" style="font-size:clamp(44px,5vw,56px);margin:0 0 4px;display:inline-block;background-size:256% 100%;background-repeat:no-repeat;line-height:1.15">$14.20</div><h3 style="font-size:20px;margin:14px 0 8px">Cost Per Paid Student</h3><p class="mu" style="font-size:15px">Down from $65+ on previous unoptimized campaigns</p></div>
+      <div class="card" style="text-align:center;padding:40px 32px"><div class="stat-big" style="font-size:clamp(44px,5vw,56px);margin:0 0 4px;display:inline-block;background-size:256% 100%;background-repeat:no-repeat;line-height:1.15">320+</div><h3 style="margin:14px 0 8px">New Paid Enrolments</h3><p class="mu" style="font-size:15px">Generated for UK-based Quran Academy in 120 Days</p></div>
+      <div class="card" style="text-align:center;padding:40px 32px"><div class="stat-big" style="font-size:clamp(44px,5vw,56px);margin:0 0 4px;display:inline-block;background-size:256% 100%;background-repeat:no-repeat;line-height:1.15">$14.20</div><h3 style="margin:14px 0 8px">Cost Per Paid Student</h3><p class="mu" style="font-size:15px">Down from $65+ on previous unoptimized campaigns</p></div>
     </div>
   </div>
 </section>
@@ -374,10 +358,10 @@ footer p{font-size:14px;margin-bottom:18px}
 <section id="about" class="sec" style="padding-top:0">
   <div class="w">
     <div class="about">
-      <div class="ph"><img src="assets/logo.png" alt="Subtle Marketing" style="object-fit:contain;padding:40px;background:#fff" loading="lazy" decoding="async"><!-- TODO: replace with official Subtle team photo --></div>
+      <div class="ph"><img width="1013" height="323" src="assets/logo.png" alt="Subtle Marketing" style="object-fit:contain;padding:40px;background:#fff" loading="lazy" decoding="async"><!--replace with official Subtle team photo --></div>
       <div>
         <div class="ey">About</div>
-        <h2 style="font-size:clamp(26px,3.4vw,40px)">The growth team behind Quran Academies that scale.</h2>
+        <h2>The growth team behind Quran Academies that scale.</h2>
         <p style="margin-top:22px">Subtle Marketing is a specialized growth division for Quran Academies and EdTech institutions. Our core growth strategists and performance marketers focus on one outcome: paid enrolments, not cheap form fills.</p>
         <p>We run country-specific Meta ad campaigns, install server-side conversion tracking, and automate WhatsApp trial-to-paid follow-ups so academy owners can scale to $10k+/mo in paid enrolments.</p>
         <div class="about-stats">
@@ -429,7 +413,7 @@ footer p{font-size:14px;margin-bottom:18px}
     <footer>
       <div class="fg">
         <div>
-          <a class="brand" href="#"><img class="logo-mark" src="assets/logo-icon.png" alt="Subtle Marketing" loading="lazy" decoding="async"><span class="brand-text"><strong>SUBTLE</strong><small>MARKETING</small></span></a>
+          <a class="brand" href="#"><img width="413" height="413" class="logo-mark" src="assets/logo-icon.png" alt="Subtle Marketing" loading="lazy" decoding="async"><span class="brand-text"><strong>SUBTLE</strong><small>MARKETING</small></span></a>
           <p><a class="fa" href="https://subtle-marketing.com/" target="_blank" rel="noopener">Subtle Marketing — Specialized Growth Division for Quran Academies &amp; EdTech Institutions.</a></p>
           <div class="ct">
             <a class="btn gh sm" href="marketing-estimator/">Marketing Estimator</a>
@@ -451,7 +435,7 @@ footer p{font-size:14px;margin-bottom:18px}
         </div>
       </div>
       <div class="cp">
-        <span class="cl"><a href="#" onclick="return false" aria-disabled="true">Terms &amp; Service</a><i></i><a href="#" onclick="return false" aria-disabled="true">Privacy Policy</a></span><!-- TODO: confirm legal page URLs with Ehtisham -->
+        <span class="cl"><a href="#" onclick="return false" aria-disabled="true">Terms &amp; Service</a><i></i><a href="#" onclick="return false" aria-disabled="true">Privacy Policy</a></span><!--legal page URLs  -->
         <span>© 2026 Subtle Marketing. All Rights Reserved.</span>
       </div>
     </footer>
@@ -467,12 +451,11 @@ window.addEventListener('scroll',()=>nav.classList.toggle('s',window.scrollY>10)
 const toTop=document.getElementById('toTop');
 window.addEventListener('scroll',()=>toTop.classList.toggle('show',window.scrollY>400));
 toTop.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});
-bg.addEventListener('click',()=>{nav.classList.toggle('o');bg.textContent=nav.classList.contains('o')?'✕':'☰';});
-window.addEventListener('scroll',()=>{if(nav.classList.contains('o')){nav.classList.remove('o');bg.textContent='☰';}});
-document.querySelectorAll('.nav nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('o');bg.textContent='☰';}));
-document.querySelectorAll('.step').forEach(d=>{
-  d.addEventListener('toggle',()=>{ if(d.open) document.querySelectorAll('.step').forEach(o=>{if(o!==d)o.open=false}) });
-});
+function setMenu(open){nav.classList.toggle('o',open);bg.textContent=open?'✕':'☰';bg.setAttribute('aria-expanded',open?'true':'false');}
+bg.addEventListener('click',()=>setMenu(!nav.classList.contains('o')));
+window.addEventListener('scroll',()=>{if(nav.classList.contains('o'))setMenu(false);});
+document.querySelectorAll('.nav nav a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('o')){setMenu(false);bg.focus();}});
 </script>
 </body>
 </html>
