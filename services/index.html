@@ -89,6 +89,19 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none!important}.card:hover{transform:none}}
 @media(hover:none){.btn:hover,a.card:hover{transform:none!important}}
 .cp .cl{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.cp .cl i{width:1px;height:14px;background:rgba(255,255,255,.28)}.cp a:hover{color:#e07ce0}.fa{text-decoration:underline;text-underline-offset:3px}.fa:hover{color:#e07ce0}@media(max-width:640px){.cp{flex-direction:column;align-items:flex-start;gap:14px}}
+/* shared page hero: same layout on case-studies, services, free-audit (Mubashir-style, left aligned) */
+section.ph{padding-top:170px;padding-bottom:110px;text-align:left;display:block;background:radial-gradient(45% 38% at 50% 0%,rgba(191,62,255,.11) 0%,transparent 70%),radial-gradient(38% 42% at 95% 20%,rgba(11,191,239,.10) 0%,transparent 70%),#eee6f9}
+.ph .ey{display:block;padding:0;border:0;background:none;margin:0 0 22px}
+.ph h1{font-size:clamp(34px,4vw,60px);line-height:1.06;max-width:none;margin:0 0 24px;text-align:left}
+.ph h1 .word{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.ph .sub{color:var(--mu);font-size:clamp(17px,1.5vw,20px);line-height:1.65;max-width:640px;margin:0;text-align:left}
+.ph .ct{margin-top:36px;justify-content:flex-start}
+.ph .w.ph-n{max-width:900px}
+section.ph .aw{max-width:1320px;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+section.ph .aw h1{font-size:clamp(34px,4vw,56px)}
+section.ph .aw p.sub{max-width:570px}
+@media(max-width:1000px){section.ph .aw{grid-template-columns:1fr;gap:40px}}
+@media(max-width:640px){section.ph{padding-top:130px;padding-bottom:56px}.ph h1{font-size:clamp(32px,9vw,42px)}.ph h1 br{display:none}.ph .ct .btn{width:100%}}
 </style>
 </head>
 <body>
@@ -111,11 +124,11 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
   </div>
 </div>
 
-<section class="svc-hero">
-  <div class="w">
+<section class="svc-hero ph">
+  <div class="w ph-n">
     <div class="ey">Services</div>
-    <h1>Growth services for the <span class="word">Ummah's institutions.</span></h1>
-    <p>Four core services. One proven system. Built specifically for Quran Academies.</p>
+    <h1>Growth services for the<br><span class="word">Ummah's institutions.</span></h1>
+    <p class="sub">Four core services. One proven system. Built specifically for Quran Academies.</p>
   </div>
 </section>
 

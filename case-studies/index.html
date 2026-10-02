@@ -83,6 +83,19 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none!important}.card:hover{transform:none}}
 @media(hover:none){.btn:hover,a.card:hover,.card:hover{transform:none!important}}
 .cp .cl{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.cp .cl i{width:1px;height:14px;background:rgba(255,255,255,.28)}.cp a:hover{color:#e07ce0}.fa{text-decoration:underline;text-underline-offset:3px}.fa:hover{color:#e07ce0}@media(max-width:640px){.cp{flex-direction:column;align-items:flex-start;gap:14px}}
+/* shared page hero: same layout on case-studies, services, free-audit (Mubashir-style, left aligned) */
+section.ph{padding-top:170px;padding-bottom:110px;text-align:left;display:block;background:radial-gradient(45% 38% at 50% 0%,rgba(191,62,255,.11) 0%,transparent 70%),radial-gradient(38% 42% at 95% 20%,rgba(11,191,239,.10) 0%,transparent 70%),#eee6f9}
+.ph .ey{display:block;padding:0;border:0;background:none;margin:0 0 22px}
+.ph h1{font-size:clamp(34px,4vw,60px);line-height:1.06;max-width:none;margin:0 0 24px;text-align:left}
+.ph h1 .word{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.ph .sub{color:var(--mu);font-size:clamp(17px,1.5vw,20px);line-height:1.65;max-width:640px;margin:0;text-align:left}
+.ph .ct{margin-top:36px;justify-content:flex-start}
+.ph .w.ph-n{max-width:900px}
+section.ph .aw{max-width:1320px;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+section.ph .aw h1{font-size:clamp(34px,4vw,56px)}
+section.ph .aw p.sub{max-width:570px}
+@media(max-width:1000px){section.ph .aw{grid-template-columns:1fr;gap:40px}}
+@media(max-width:640px){section.ph{padding-top:130px;padding-bottom:56px}.ph h1{font-size:clamp(32px,9vw,42px)}.ph h1 br{display:none}.ph .ct .btn{width:100%}}
 </style>
 </head>
 <body>
@@ -105,12 +118,12 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
   </div>
 </div>
 
-<section class="hero" style="padding:160px 24px 70px">
-  <div class="w">
-    <div class="ey" style="display:inline-flex;padding:10px 20px;border-radius:99px;background:rgba(255,255,255,.06);border:1px solid var(--line)">Case Studies</div>
-    <h1 style="max-width:840px;margin:0 auto">Real numbers from <span class="word">real academies.</span></h1>
-    <p>8+ Crore in managed Meta ad spend across 400+ Quran academies and Islamic organizations worldwide. Download the full deck to see every screenshot, funnel and result in detail.</p>
-    <div class="ct" style="justify-content:center">
+<section class="ph">
+  <div class="w ph-n">
+    <div class="ey">Case Studies</div>
+    <h1>Real numbers from<br><span class="word">real academies.</span></h1>
+    <p class="sub">8+ Crore in managed Meta ad spend across 400+ Quran academies and Islamic organizations worldwide. Download the full deck to see every screenshot, funnel and result in detail.</p>
+    <div class="ct">
       <a class="btn" href="../case-studies/International-Academies-Case-Studies.pdf" download><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Full Case Studies PDF</a>
       <a class="btn gh" href="../case-studies/International-Academies-Case-Studies.pdf" target="_blank" rel="noreferrer"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Preview PDF</a>
     </div>
