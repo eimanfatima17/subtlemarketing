@@ -1,9 +1,9 @@
-// Env vars (set in Vercel): RESEND_API_KEY, LEAD_TO_EMAIL, LEAD_FROM_EMAIL (verified domain)
+// Env vars (set in vercel): RESEND_API_KEY, LEAD_TO_EMAIL, LEAD_FROM_EMAIL 
 
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const clean = (v, max = 300) => String(v ?? '').replace(/[\r\n]+/g, ' ').trim().slice(0, max);
 
-const SOURCES = { 'free-audit': 'Free Growth Audit' };
+const SOURCES = { 'free-audit': 'Free Growth Audit', 'marketing-estimator': 'Marketing Estimator' };
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') { res.setHeader('Allow', 'POST'); return res.status(405).json({ ok: false }); }

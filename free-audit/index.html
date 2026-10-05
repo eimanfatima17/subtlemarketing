@@ -251,10 +251,11 @@ document.getElementById('auditForm').addEventListener('submit',function(e){
   const g=id=>document.getElementById(id).value.trim();
   const via=e.submitter&&e.submitter.value;
   const fields={'Academy':g('af-academy'),'Owner':g('af-owner'),'WhatsApp':g('af-phone'),'Active Students':g('af-students'),'Target Region':g('af-region'),'Monthly Ad Budget':g('af-budget')};
+  const postLead=(channel,keep)=>fetch('/api/lead',{method:'POST',keepalive:!!keep,headers:{'Content-Type':'application/json'},body:JSON.stringify({source:'free-audit',website:g('af-hp'),fields:Object.assign({},fields,{'Channel':channel})})});
   if(via==='email'){
     const btn=document.getElementById('af-email-btn'),label=btn.querySelector('span'),note=document.getElementById('af-note'),form=this;
     btn.disabled=true;label.textContent='Sending...';
-    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({source:'free-audit',website:g('af-hp'),fields})})
+    postLead('Email')
       .then(r=>{if(!r.ok)throw 0;form.reset();note.textContent='Thank you! We have received your details and will contact you shortly.';})
       .catch(()=>{note.textContent='Something went wrong. Please try again or use WhatsApp.';})
       .finally(()=>{btn.disabled=false;label.textContent='Send via Email';});
@@ -267,6 +268,7 @@ WhatsApp: ${fields['WhatsApp']}
 Active Students: ${fields['Active Students']}
 Target Region: ${fields['Target Region']}
 Monthly Ad Budget: ${fields['Monthly Ad Budget']}`;
+  try{postLead('WhatsApp',true).catch(()=>{});}catch(_){}
   window.open('https://wa.me/923309582003?text='+encodeURIComponent(msg),'_blank');
 });
 </script>

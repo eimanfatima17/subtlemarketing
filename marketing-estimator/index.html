@@ -270,6 +270,7 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
           <div><label class="lb" for="pname">Your name</label><input type="text" id="pname" required></div>
         </div>
         <div style="margin-top:22px"><label class="lb" for="wa">WhatsApp number</label><input type="tel" id="wa" inputmode="tel" autocomplete="tel" required></div>
+        <input type="text" name="ef_extra" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0" id="ef-hp">
         <button type="submit" class="btn" style="justify-content:center;width:100%;margin-top:24px">
           <svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
           Get My Marketing Estimate
@@ -562,6 +563,8 @@ document.getElementById('leadForm').addEventListener('submit',e=>{
   const pname=document.getElementById('pname').value.trim();
   const wa=document.getElementById('wa').value.trim();
   const msg=`Assalamualaikum, I'm ${pname} from ${academy}. My WhatsApp: ${wa}. I'd like a marketing estimate — Budget: ${curFmt(pkrBudget())} ${state.currency}, Market: ${COUNTRIES[state.country].name}, Ad type: ${AD_TYPE[state.ad].label}.`;
+  const fields={'Academy':academy,'Owner':pname,'WhatsApp':wa,'Budget':curFmt(pkrBudget())+' '+state.currency,'Market':COUNTRIES[state.country].name,'Ad Type':AD_TYPE[state.ad].label,'Continuous Ads':state.continuous==='yes'?'Yes':'No','Estimated Leads':document.getElementById('rLeads').textContent,'Estimated Students':document.getElementById('rStudents').textContent,'Channel':'WhatsApp'};
+  try{fetch('/api/lead',{method:'POST',keepalive:true,headers:{'Content-Type':'application/json'},body:JSON.stringify({source:'marketing-estimator',website:document.getElementById('ef-hp').value.trim(),fields})}).catch(()=>{});}catch(_){}
   window.open('https://wa.me/923309582003?text='+encodeURIComponent(msg),'_blank');
 });
 
