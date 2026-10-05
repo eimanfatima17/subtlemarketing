@@ -152,13 +152,14 @@ footer p{color:#a9a9b6;max-width:440px;margin-bottom:26px;font-size:15.5px;line-
         <div>
           <label class="lb" for="budget">Monthly advertising budget</label>
           <div style="display:flex;gap:12px" class="budget-row">
-            <input type="number" id="budget" min="0" step="1000" value="90000" style="flex:1">
+            <input type="number" id="budget" min="10000" step="1000" value="90000" style="flex:1">
             <select id="currency" aria-label="Currency" style="max-width:270px">
               <option value="PKR" selected>PKR — Pakistani Rupee</option>
               <option value="USD">USD — US Dollar</option>
               <option value="GBP">GBP — British Pound</option>
             </select>
           </div>
+          <p class="hint" id="budgetMsg" role="status" aria-live="polite" style="color:#d12cbf;display:none"></p>
           <input type="range" id="budgetRange" aria-label="Monthly ad budget" min="10000" max="500000" step="5000" value="90000">
           <div class="chips" id="quickPicks">
             <button type="button" class="chip" data-v="10000">Rs10,000</button>
@@ -411,6 +412,7 @@ const AD_TYPE={
   message:{label:'Message Ads',cplMult:0.72,conv:[0.22,0.25],hint:'Message Ads are designed to start conversations directly with potential parents/students through messaging platforms.'}
 };
 
+const CONT_UPLIFT=[1,1];
 const FALLBACK_PKR_PER={USD:280,GBP:355};
 const CUR={
   PKR:{symbol:'Rs',rate:1,                     min:10000,max:500000,step:5000,quick:[10000,20000,30000,50000,90000,100000,150000,200000]},
@@ -461,10 +463,12 @@ function render(){
   const hasLeads=leadsHigh>0;
   let studLow=0, studHigh=0, cpsLow=0, cpsHigh=0, contLow=0, contHigh=0;
   if(hasLeads){
-    studLow=Math.max(1,Math.round(leadsLow*ad.conv[0]));
-    studHigh=Math.max(studLow+1,Math.round(leadsHigh*ad.conv[1]));
-    cpsLow=Math.round(budget/studHigh); cpsHigh=Math.round(budget/studLow);
-    contLow=Math.round(studLow*1.2); contHigh=Math.round(studHigh*1.25);
+    studLow=Math.round(leadsLow*ad.conv[0]);
+    studHigh=Math.round(leadsHigh*ad.conv[1]);
+    if(studHigh>0){
+      cpsLow=Math.round(budget/studHigh); cpsHigh=studLow>0?Math.round(budget/studLow):0;
+    }
+    contLow=Math.round(studLow*CONT_UPLIFT[0]); contHigh=Math.round(studHigh*CONT_UPLIFT[1]);
   }
 
   document.getElementById('mBudget').textContent=curFmt(budget)+' '+state.currency;
@@ -476,8 +480,8 @@ function render(){
   document.getElementById('rCpl').textContent=hasLeads
     ?('Estimated cost per '+unit+': '+curFmt(cplLow)+'–'+curFmt(cplHigh))
     :('Increase your budget — typical cost per '+unit+' here starts around '+curFmt(cplLow)+'.');
-  document.getElementById('rStudents').textContent=hasLeads?(studLow+'–'+studHigh):'0';
-  document.getElementById('rCps').innerHTML=hasLeads?(curFmt(cpsLow)+'<br>– '+curFmt(cpsHigh)):'N/A';
+  document.getElementById('rStudents').textContent=studHigh>0?(studLow+'–'+studHigh):'0';
+  document.getElementById('rCps').innerHTML=studHigh>0?(cpsHigh?(curFmt(cpsLow)+'<br>– '+curFmt(cpsHigh)):(curFmt(cpsLow)+'+')):'N/A';
   document.getElementById('rCont').textContent=state.continuous==='yes'?(hasLeads?(contLow+'–'+contHigh):'0'):'—';
   document.getElementById('rMonths').textContent=hasLeads
     ?('Month 1: '+studLow+'–'+studHigh+' students · Month 2+: '+contLow+'–'+contHigh+' students')
@@ -486,7 +490,7 @@ function render(){
   const monthsCard=document.getElementById('monthsCard'), contCaption=document.getElementById('rContCaption');
   if(state.continuous==='yes'){
     monthsCard.style.display='';
-    contCaption.textContent='Estimated next-month confirmations if you keep running ads consistently.';
+    contCaption.textContent='Estimated confirmations each month if you keep running ads consistently at this budget; actual results vary.';
   }else{
     monthsCard.style.display='none';
     contCaption.textContent='Switch on continuous monthly advertising above to plan for month 2+.';
@@ -499,15 +503,29 @@ document.getElementById('currency').addEventListener('change',e=>{
   render();
 });
 
+function showBudgetMsg(){
+  const cur=CUR[state.currency],msg=document.getElementById('budgetMsg');
+  msg.textContent='Minimum budget is '+cur.symbol+cur.min.toLocaleString('en-US')+'.';
+  msg.style.display='';
+}
 document.getElementById('budget').addEventListener('input',e=>{
   const cur=CUR[state.currency];
   const raw=parseInt(e.target.value,10);
-  const shown=Math.max(0,Math.min(cur.max,isNaN(raw)?0:raw));
-  state.budgetPKR=fromDisplay(shown);
+  const msg=document.getElementById('budgetMsg');
+  if(isNaN(raw)||raw<cur.min){showBudgetMsg();return;}
+  msg.style.display='none';
+  state.budgetPKR=fromDisplay(Math.min(cur.max,raw));
   syncBudgetUI(false);
   render();
 });
-document.getElementById('budget').addEventListener('change',()=>syncBudgetUI(true));
+document.getElementById('budget').addEventListener('change',e=>{
+  const cur=CUR[state.currency];
+  const raw=parseInt(e.target.value,10);
+  state.budgetPKR=fromDisplay(Math.max(cur.min,Math.min(cur.max,isNaN(raw)?cur.min:raw)));
+  document.getElementById('budgetMsg').style.display='none';
+  syncBudgetUI(true);
+  render();
+});
 document.getElementById('budgetRange').addEventListener('input',e=>{
   state.budgetPKR=fromDisplay(parseInt(e.target.value,10));
   syncBudgetUI(true);

@@ -194,9 +194,8 @@ h2{line-height:1.12}h3{font-size:17px}
 .about p{font-size:15px;line-height:1.7;margin-bottom:12px}
 .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px 12px;margin-top:18px;padding-top:18px}
 .about-stats div{padding:0;border:0}.about-stats b{font-size:26px}
-#testimonials .g4{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 18px;margin:26px -18px 0;padding:4px 18px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-#testimonials .g4::-webkit-scrollbar{display:none}
-#testimonials .tm{flex:0 0 84%;scroll-snap-align:start;padding:22px}
+#testimonials .g4{display:flex;flex-direction:column;gap:14px;margin:26px 0 0;padding:0}
+#testimonials .tm{flex:none;width:100%;padding:22px}
 .tm p{font-size:14.5px;margin-bottom:16px}
 .audit{padding:34px 22px;border-radius:22px}
 .audit h2{font-size:25px}
@@ -456,6 +455,24 @@ bg.addEventListener('click',()=>setMenu(!nav.classList.contains('o')));
 window.addEventListener('scroll',()=>{if(nav.classList.contains('o'))setMenu(false);});
 document.querySelectorAll('.nav nav a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('o')){setMenu(false);bg.focus();}});
+document.querySelectorAll('.st b').forEach(el=>{
+  const m=el.textContent.trim().match(/^(\D*)([\d.]+)(\D*)$/);
+  if(!m||window.matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
+  const pre=m[1],end=parseFloat(m[2]),suf=m[3],dec=(m[2].split('.')[1]||'').length,final=el.textContent;
+  el.style.fontVariantNumeric='tabular-nums';
+  el.textContent=pre+(0).toFixed(dec)+suf;
+  const io=new IntersectionObserver(es=>{
+    if(!es[0].isIntersecting)return;
+    io.disconnect();
+    const t0=performance.now(),dur=1800;
+    (function tick(t){
+      const k=Math.min((t-t0)/dur,1),e=1-Math.pow(1-k,3);
+      el.textContent=k<1?pre+(end*e).toFixed(dec)+suf:final;
+      if(k<1)requestAnimationFrame(tick);
+    })(t0);
+  },{threshold:.4});
+  io.observe(el);
+});
 </script>
 </body>
 </html>
