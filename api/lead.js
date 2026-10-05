@@ -1,17 +1,8 @@
-// Lead form handler. The forms post here and we forward the lead to the client's inbox using Resend.
-//
-// Needs these env vars in Vercel (Settings > Environment Variables), then redeploy:
-//   RESEND_API_KEY   - the client's Resend key
-//   LEAD_TO_EMAIL    - inbox that should get the leads (comma separated if more than one)
-//   LEAD_FROM_EMAIL  - e.g. "Subtle Marketing <leads@theirdomain.com>". The domain has to be
-//                      verified in Resend first. If it's missing we fall back to Resend's test
-//                      sender, which only delivers to the account owner's own email.
+// Env vars (set in Vercel): RESEND_API_KEY, LEAD_TO_EMAIL, LEAD_FROM_EMAIL (verified domain)
 
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-// strip line breaks and cap length so nobody can stuff junk into the subject or email
 const clean = (v, max = 300) => String(v ?? '').replace(/[\r\n]+/g, ' ').trim().slice(0, max);
 
-// only the free audit form sends leads by email, anything else gets rejected below
 const SOURCES = { 'free-audit': 'Free Growth Audit' };
 
 module.exports = async (req, res) => {
@@ -19,7 +10,6 @@ module.exports = async (req, res) => {
 
   const body = typeof req.body === 'string' ? safeJson(req.body) : (req.body || {});
 
-  // Hidden "website" field - real people never see it, bots fill it in. Just say ok and drop it.
   if (body.website) return res.status(200).json({ ok: true });
 
   const source = SOURCES[body.source] ? body.source : null;
@@ -35,7 +25,6 @@ module.exports = async (req, res) => {
   }
 
   const label = SOURCES[source];
-  // simple table so the email is easy to read on a phone
   const rows = entries.map(([k, v]) =>
     `<tr><td style="padding:6px 12px;font-weight:600;border-bottom:1px solid #eee">${esc(k)}</td><td style="padding:6px 12px;border-bottom:1px solid #eee">${esc(v)}</td></tr>`).join('');
   const html = `<div style="font-family:Arial,sans-serif"><h2>New lead: ${esc(label)}</h2><table style="border-collapse:collapse">${rows}</table></div>`;
