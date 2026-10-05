@@ -189,6 +189,7 @@ section.ph .aw p.sub{max-width:570px}
             <option>$2,500+</option>
           </select>
         </div>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0" id="af-hp">
         <button class="btn" type="submit"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> Send via WhatsApp</button>
         <p class="disclaimer">By submitting, you'll be redirected to WhatsApp to start the conversation.</p>
       </form>
@@ -255,6 +256,9 @@ WhatsApp: ${g('af-phone')}
 Active Students: ${g('af-students')}
 Target Region: ${g('af-region')}
 Monthly Ad Budget: ${g('af-budget')}`;
+  // send the lead to our inbox via /api/lead. Not awaiting it on purpose, otherwise the browser
+  // may block the WhatsApp popup. If the email fails the visitor still gets to WhatsApp.
+  try{fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({source:'free-audit',website:g('af-hp'),fields:{'Academy':g('af-academy'),'Owner':g('af-owner'),'WhatsApp':g('af-phone'),'Active Students':g('af-students'),'Target Region':g('af-region'),'Monthly Ad Budget':g('af-budget')}})}).catch(()=>{});}catch(_){}
   window.open('https://wa.me/923239001373?text='+encodeURIComponent(msg), '_blank');
 });
 </script>
