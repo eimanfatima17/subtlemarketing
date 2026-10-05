@@ -5,14 +5,50 @@ const clean = (v, max = 300) => String(v ?? '').replace(/[\r\n]+/g, ' ').trim().
 
 const SOURCES = { 'free-audit': 'Free Growth Audit', 'marketing-estimator': 'Marketing Estimator' };
 
+const IP_LIMIT = 5, IP_WINDOW_MS = 10 * 60 * 1000;
+const GLOBAL_LIMIT = 100, GLOBAL_WINDOW_MS = 60 * 60 * 1000;
+const hits = new Map();
+let globalHits = [];
+
+function clientIp(req) {
+  const xff = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
+  return xff || String(req.headers['x-real-ip'] || '') || (req.socket && req.socket.remoteAddress) || 'unknown';
+}
+
+function rateLimit(ip) {
+  const now = Date.now();
+  globalHits = globalHits.filter(t => now - t < GLOBAL_WINDOW_MS);
+  if (globalHits.length >= GLOBAL_LIMIT) return Math.ceil((globalHits[0] + GLOBAL_WINDOW_MS - now) / 1000);
+
+  const recent = (hits.get(ip) || []).filter(t => now - t < IP_WINDOW_MS);
+  if (recent.length >= IP_LIMIT) {
+    hits.set(ip, recent);
+    return Math.ceil((recent[0] + IP_WINDOW_MS - now) / 1000);
+  }
+  recent.push(now);
+  hits.set(ip, recent);
+  globalHits.push(now);
+
+  if (hits.size > 5000) {
+    for (const [k, v] of hits) if (!v.some(t => now - t < IP_WINDOW_MS)) hits.delete(k);
+  }
+  return 0;
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') { res.setHeader('Allow', 'POST'); return res.status(405).json({ ok: false }); }
+
+  const wait = rateLimit(clientIp(req));
+  if (wait) {
+    res.setHeader('Retry-After', String(wait));
+    return res.status(429).json({ ok: false, error: 'Too many requests. Please try again later.' });
+  }
 
   const body = typeof req.body === 'string' ? safeJson(req.body) : (req.body || {});
 
   if (body.website) return res.status(200).json({ ok: true });
 
-  const source = SOURCES[body.source] ? body.source : null;
+  const source = typeof body.source === 'string' && Object.hasOwn(SOURCES, body.source) ? body.source : null;
   const fields = body.fields && typeof body.fields === 'object' ? body.fields : {};
   const entries = Object.entries(fields).slice(0, 15).map(([k, v]) => [clean(k, 40), clean(v)]).filter(([k, v]) => k && v);
   if (!source || !entries.length) return res.status(400).json({ ok: false, error: 'Invalid request' });

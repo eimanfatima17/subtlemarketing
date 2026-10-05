@@ -105,6 +105,47 @@ section.ph .aw h1{font-size:clamp(34px,4vw,56px)}
 section.ph .aw p.sub{max-width:570px}
 @media(max-width:1000px){section.ph .aw{grid-template-columns:1fr;gap:40px}}
 @media(max-width:640px){section.ph{padding-top:130px;padding-bottom:56px}.ph h1{font-size:clamp(32px,9vw,42px)}.ph h1 br{display:none}.ph .ct .btn{width:100%}}
+
+.form-card{overflow:visible}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:460px){.row2{grid-template-columns:1fr;gap:0}}
+.dp{position:relative}
+.dp-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 18px;border-radius:var(--r-sm);border:1px solid var(--line);background:#fff;color:var(--tx);font-size:16px;font-family:inherit;text-align:left;cursor:pointer;transition:.2s}
+.dp-btn span{color:#6f6f80;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dp-btn.has span{color:var(--tx)}
+.dp-btn svg{width:18px;height:18px;flex:none;stroke:var(--mu);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dp-btn:hover,.dp-btn:focus-visible,.dp.open .dp-btn{border-color:rgba(209,44,191,.5);outline:0}
+.dp-pop{position:absolute;z-index:30;top:calc(100% + 8px);left:0;width:310px;max-width:calc(100vw - 48px);background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 60px rgba(60,20,110,.22);padding:16px 16px 12px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s}
+.dp.open .dp-pop{opacity:1;visibility:visible;transform:none}
+.dp-h{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.dp-title{display:flex;align-items:center;gap:6px;border:0;background:transparent;font-weight:700;font-size:15px;line-height:1;font-family:inherit;color:var(--tx);padding:8px 10px;border-radius:10px;cursor:pointer;transition:.15s}
+.dp-title:hover{background:#f5ecfb}
+.dp-title svg{width:14px;height:14px;stroke:var(--mu);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.dp.ym .dp-title svg{transform:rotate(180deg)}
+.dp-nav{display:flex;gap:6px}
+.dp-nav button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--tx);cursor:pointer;display:grid;place-items:center;transition:.15s}
+.dp-nav button svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.dp-nav button:hover:not(:disabled){background:#f5ecfb;border-color:rgba(209,44,191,.35)}
+.dp-nav button:disabled{opacity:.3;cursor:not-allowed}
+.dp-g{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center}
+.dp-g .dw{font-size:12px;font-weight:700;color:var(--mu);padding:6px 0 8px}
+.dp-g .dw.wk{color:#b8b8c6}
+.dp-g button,.dp-g i{aspect-ratio:1;border-radius:50%;font-weight:600;font-size:14px;line-height:1;font-family:inherit;display:grid;place-items:center;font-style:normal}
+.dp-g button{border:0;background:transparent;color:var(--tx);cursor:pointer;transition:.15s}
+.dp-g button:hover:not(:disabled):not(.sel){background:#f5ecfb}
+.dp-g button.today{box-shadow:inset 0 0 0 1.5px rgba(209,44,191,.5)}
+.dp-g button.sel{background:var(--sec);color:#fff;box-shadow:0 6px 14px rgba(150,60,230,.35)}
+.dp-g button:disabled{color:#c4c4d0;cursor:not-allowed;font-weight:500}
+.dp-g i{color:#d6d6e0;font-weight:500}
+.dp-ym{display:none}
+.dp.ym .dp-ym{display:block}.dp.ym .dp-days{display:none}
+.dp-ym .dp-g{grid-template-columns:repeat(3,1fr);gap:8px;padding:6px 0 4px}
+.dp-ym .dp-g button{aspect-ratio:auto;border-radius:12px;padding:14px 0;font-size:14px}
+.dp-f{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:10px;border-top:1px solid var(--line)}
+.dp-f button{border:0;background:transparent;font-weight:700;font-size:13px;line-height:1;font-family:inherit;color:var(--ey);cursor:pointer;padding:8px 10px;border-radius:8px;transition:.15s}
+.dp-f button:hover{background:#f5ecfb}
+.fld select:disabled{cursor:not-allowed;background-color:#f7f4fb;color:#8a8a9c}
+.fld .hint{display:block;font-size:12.5px;color:var(--mu);margin-top:6px}
 </style>
 </head>
 <body>
@@ -188,6 +229,34 @@ section.ph .aw p.sub{max-width:570px}
             <option>$2,500+</option>
           </select>
         </div>
+        <div class="row2">
+          <div class="fld">
+            <label id="af-date-l" for="dp-btn">Preferred Call Date</label>
+            <div class="dp" id="dp">
+              <button type="button" class="dp-btn" id="dp-btn" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="af-date-l dp-val"><span id="dp-val">Select date</span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></button>
+              <div class="dp-pop" id="dp-pop" role="dialog" aria-label="Choose call date">
+                <div class="dp-h">
+                  <button type="button" class="dp-title" id="dp-title" aria-label="Choose month and year"><span id="dp-title-t"></span><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+                  <div class="dp-nav">
+                    <button type="button" id="dp-prev" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+                    <button type="button" id="dp-next" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+                  </div>
+                </div>
+                <div class="dp-days"><div class="dp-g" id="dp-grid"></div></div>
+                <div class="dp-ym"><div class="dp-g" id="dp-months"></div></div>
+                <div class="dp-f"><button type="button" id="dp-clear">Clear</button><button type="button" id="dp-today">Today</button></div>
+              </div>
+            </div>
+            <input type="hidden" id="af-date" name="date">
+          </div>
+          <div class="fld">
+            <label for="af-time">Select Time</label>
+            <select id="af-time" name="time" required disabled>
+              <option value="" disabled selected>Pick a date first</option>
+            </select>
+          </div>
+        </div>
+        <span class="hint" style="margin:-10px 0 22px">Mon&ndash;Fri only &middot; Times in PKT </span>
         <input type="text" name="af_extra" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0" id="af-hp">
         <button class="btn" type="submit" value="whatsapp"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> Send via WhatsApp</button>
         <button class="btn gh" type="submit" value="email" id="af-email-btn" style="margin-top:12px"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> <span>Send via Email</span></button>
@@ -246,18 +315,121 @@ window.addEventListener('scroll',()=>{if(nav.classList.contains('o'))setMenu(fal
 document.querySelectorAll('.nav nav a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('o')){setMenu(false);bg.focus();}});
 
+
+(function(){
+  const SLOTS=['09:00 AM','10:00 AM','11:00 AM','12:00 PM','01:00 PM','02:00 PM','03:00 PM','04:00 PM','05:00 PM'];
+  const CLOSED_DAYS=[0,6];      
+  const MAX_MONTHS_AHEAD=12;    
+  const MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const DN=['Mo','Tu','We','Th','Fr','Sa','Su'];
+  const $=id=>document.getElementById(id);
+  const root=$('dp'),btn=$('dp-btn'),val=$('dp-val'),grid=$('dp-grid'),mgrid=$('dp-months'),
+        titleT=$('dp-title-t'),prev=$('dp-prev'),next=$('dp-next'),dateIn=$('af-date'),timeSel=$('af-time');
+  const pk=()=>new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Karachi'}));
+  const slotHour=t=>{const m=t.match(/(\d+):(\d+) (AM|PM)/);return +m[1]%12+(m[3]==='PM'?12:0);};
+  const base=pk();const today=new Date(base.getFullYear(),base.getMonth(),base.getDate());
+  const minM=new Date(today.getFullYear(),today.getMonth(),1);
+  const maxM=new Date(today.getFullYear(),today.getMonth()+MAX_MONTHS_AHEAD,1);
+  let view=new Date(minM),sel=null,ymMode=false;
+  const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  const nice=d=>d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  const short=d=>d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
+  const slotsFor=d=>{
+    if(d.getTime()!==today.getTime())return SLOTS;
+    const h=pk().getHours();return SLOTS.filter(t=>slotHour(t)>h);
+  };
+  const isOff=d=>d<today||CLOSED_DAYS.includes(d.getDay())||slotsFor(d).length===0||d>new Date(maxM.getFullYear(),maxM.getMonth()+1,0);
+
+  function fillTimes(d){
+    const list=slotsFor(d);
+    timeSel.innerHTML='<option value="" disabled selected>Choose a time</option>';
+    list.forEach(t=>{const o=document.createElement('option');o.textContent=t;timeSel.appendChild(o);});
+    timeSel.disabled=false;
+  }
+  function resetTimes(){timeSel.innerHTML='<option value="" disabled selected>Pick a date first</option>';timeSel.disabled=true;}
+
+  function renderDays(){
+    titleT.textContent=MN[view.getMonth()]+' '+view.getFullYear();
+    prev.disabled=view<=minM;next.disabled=view>=maxM;
+    let h=DN.map((d,i)=>'<div class="dw'+(i>4?' wk':'')+'">'+d+'</div>').join('');
+    const y=view.getFullYear(),m=view.getMonth();
+    const first=(new Date(y,m,1).getDay()+6)%7,days=new Date(y,m+1,0).getDate(),prevDays=new Date(y,m,0).getDate();
+    for(let i=first;i>0;i--)h+='<i>'+(prevDays-i+1)+'</i>';
+    for(let n=1;n<=days;n++){
+      const d=new Date(y,m,n),t=d.getTime();
+      const cls=[t===today.getTime()?'today':'',sel&&t===sel.getTime()?'sel':''].join(' ').trim();
+      h+='<button type="button" data-d="'+iso(d)+'"'+(cls?' class="'+cls+'"':'')+(isOff(d)?' disabled':'')+' aria-label="'+nice(d)+'"'+(cls.includes('sel')?' aria-pressed="true"':'')+'>'+n+'</button>';
+    }
+    const total=first+days,tail=(7-total%7)%7;
+    for(let i=1;i<=tail;i++)h+='<i>'+i+'</i>';
+    grid.innerHTML=h;
+  }
+  function renderMonths(){
+    titleT.textContent=view.getFullYear();
+    const y=view.getFullYear();
+    prev.disabled=y<=minM.getFullYear();next.disabled=y>=maxM.getFullYear();
+    let h='';
+    for(let m=0;m<12;m++){
+      const d=new Date(y,m,1),off=d<minM||d>maxM;
+      const cur=sel&&sel.getFullYear()===y&&sel.getMonth()===m;
+      h+='<button type="button" data-m="'+m+'"'+(cur?' class="sel"':'')+(off?' disabled':'')+'>'+MN[m].slice(0,3)+'</button>';
+    }
+    mgrid.innerHTML=h;
+  }
+  const render=()=>ymMode?renderMonths():renderDays();
+  function setYM(on){ymMode=on;root.classList.toggle('ym',on);render();}
+
+  function open(){root.classList.add('open');btn.setAttribute('aria-expanded','true');
+    view=sel?new Date(sel.getFullYear(),sel.getMonth(),1):new Date(view);setYM(false);}
+  function close(){root.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+
+  function pick(d){
+    sel=d;dateIn.value=iso(d);val.textContent=short(d);btn.classList.add('has');
+    fillTimes(d);close();timeSel.focus();
+  }
+  function clear(){
+    sel=null;dateIn.value='';val.textContent='Select date';btn.classList.remove('has');
+    resetTimes();view=new Date(minM);setYM(false);
+  }
+
+  btn.addEventListener('click',()=>root.classList.contains('open')?close():open());
+  $('dp-title').addEventListener('click',()=>setYM(!ymMode));
+  prev.addEventListener('click',()=>{view=ymMode?new Date(view.getFullYear()-1,view.getMonth(),1):new Date(view.getFullYear(),view.getMonth()-1,1);render();});
+  next.addEventListener('click',()=>{view=ymMode?new Date(view.getFullYear()+1,view.getMonth(),1):new Date(view.getFullYear(),view.getMonth()+1,1);render();});
+  grid.addEventListener('click',e=>{
+    const b=e.target.closest('button[data-d]');if(!b||b.disabled)return;
+    const [y,m,d]=b.dataset.d.split('-').map(Number);pick(new Date(y,m-1,d));
+  });
+  mgrid.addEventListener('click',e=>{
+    const b=e.target.closest('button[data-m]');if(!b||b.disabled)return;
+    let v=new Date(view.getFullYear(),+b.dataset.m,1);
+    if(v<minM)v=new Date(minM);if(v>maxM)v=new Date(maxM);
+    view=v;setYM(false);
+  });
+  $('dp-clear').addEventListener('click',()=>{clear();});
+  $('dp-today').addEventListener('click',()=>{
+    let d=new Date(today);for(let i=0;i<14&&isOff(d);i++)d=new Date(d.getFullYear(),d.getMonth(),d.getDate()+1);
+    if(!isOff(d))pick(d);
+  });
+  document.addEventListener('click',e=>{if(!root.contains(e.target))close();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&root.classList.contains('open')){close();btn.focus();}});
+  $('auditForm').addEventListener('reset',()=>setTimeout(clear));
+  render();
+})();
+
 document.getElementById('auditForm').addEventListener('submit',function(e){
   e.preventDefault();
+  if(!document.getElementById('af-date').value){const n=document.getElementById('af-note');n.textContent='Please pick a call date.';document.getElementById('dp').scrollIntoView({behavior:'smooth',block:'center'});return;}
   const g=id=>document.getElementById(id).value.trim();
   const via=e.submitter&&e.submitter.value;
-  const fields={'Academy':g('af-academy'),'Owner':g('af-owner'),'WhatsApp':g('af-phone'),'Active Students':g('af-students'),'Target Region':g('af-region'),'Monthly Ad Budget':g('af-budget')};
+  const fields={'Academy':g('af-academy'),'Owner':g('af-owner'),'WhatsApp':g('af-phone'),'Active Students':g('af-students'),'Target Region':g('af-region'),'Monthly Ad Budget':g('af-budget'),'Call Date':g('af-date'),'Call Time (PKT)':g('af-time')};
   const postLead=(channel,keep)=>fetch('/api/lead',{method:'POST',keepalive:!!keep,headers:{'Content-Type':'application/json'},body:JSON.stringify({source:'free-audit',website:g('af-hp'),fields:Object.assign({},fields,{'Channel':channel})})});
   if(via==='email'){
     const btn=document.getElementById('af-email-btn'),label=btn.querySelector('span'),note=document.getElementById('af-note'),form=this;
     btn.disabled=true;label.textContent='Sending...';
     postLead('Email')
-      .then(r=>{if(!r.ok)throw 0;form.reset();note.textContent='Thank you! We have received your details and will contact you shortly.';})
-      .catch(()=>{note.textContent='Something went wrong. Please try again or use WhatsApp.';})
+      .then(r=>{if(!r.ok)throw r.status;form.reset();note.textContent='Thank you! We have received your details and will contact you shortly.';})
+      .catch(err=>{note.textContent=err===429?'Too many attempts. Please wait a few minutes or use WhatsApp.':'Something went wrong. Please try again or use WhatsApp.';})
       .finally(()=>{btn.disabled=false;label.textContent='Send via Email';});
     return;
   }
@@ -267,7 +439,8 @@ Owner: ${fields['Owner']}
 WhatsApp: ${fields['WhatsApp']}
 Active Students: ${fields['Active Students']}
 Target Region: ${fields['Target Region']}
-Monthly Ad Budget: ${fields['Monthly Ad Budget']}`;
+Monthly Ad Budget: ${fields['Monthly Ad Budget']}
+Preferred Call: ${fields['Call Date']} at ${fields['Call Time (PKT)']} (PKT)`;
   try{postLead('WhatsApp',true).catch(()=>{});}catch(_){}
   window.open('https://wa.me/923309582003?text='+encodeURIComponent(msg),'_blank');
 });
